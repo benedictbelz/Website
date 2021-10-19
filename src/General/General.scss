@@ -1,0 +1,15 @@
+@import './Fonts.scss';
+@import './Variables.scss';
+
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", "Web", sans-serif;
+}
