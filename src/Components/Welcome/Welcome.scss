@@ -1,0 +1,44 @@
+@import '../../General/Variables.scss';
+
+#welcome {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    justify-items: center;
+    background-color: $color-white;
+
+    #logo {
+        height: $spacing-icon*1.25;
+        width: $spacing-icon*1.25;
+        align-self: flex-end;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    #message {
+        color: $color-black;
+        font-size: $font-size-l;
+        font-weight: $font-weight-thin;
+        align-self: center;
+        text-align: center;
+        margin: $spacing-l 0;
+    }
+
+    #enter {
+        cursor: pointer;
+        align-self: flex-start;
+
+        img {
+            height: $spacing-icon;
+            width: $spacing-icon;
+            transition: transform $transition-medium ease;
+            transform: scale(1);
+
+            &:hover {
+                transform: scale(1.25);
+            }
+        }
+    }
+}

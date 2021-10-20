@@ -1,0 +1,52 @@
+@import '../../General/Variables.scss';
+
+#header {
+    pointer-events: none;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-m;
+
+    div {
+        position: relative;
+        cursor: pointer;
+        pointer-events: all;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $spacing-icon;
+        width: $spacing-icon;
+
+        img {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            width: 0%;
+            transition: opacity $transition-high ease,
+                        transform $transition-high ease,
+                        width $transition-high ease;
+
+            &.show {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+        &:first-child:hover {
+            #logo_left { transform: translateX(5%); }
+            #logo_right { transform: translateX(-5%); }
+            #arrow_up { transform: scale(1.25); }
+        }
+
+        &:last-child:hover {
+            #information_right { transform: translateY(-5%); }
+            #arrow_left { transform: scale(1.25); }
+            #arrow_right { transform: scale(1.25); }
+        }
+    }
+}

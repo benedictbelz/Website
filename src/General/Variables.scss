@@ -3,13 +3,15 @@
 /******************************/
 
 $color-white: #FFFFFF;
+$color-white-transparent: #FFFFFF80;
 $color-black: #141414;
+$color-black-transparent: #14141440;
 
 /******************************/
 /********** FONT-SIZE *********/
 /******************************/
 
-$font-size-s: 12px;
+$font-size-s: 14px;
 $font-size-m: 16px;
 $font-size-l: 20px;
 $font-size-xl: 24px;
@@ -26,9 +28,10 @@ $font-weight-bold: 700;
 /*********** SPACING **********/
 /******************************/
 
-$spacing-s: 5px;
-$spacing-m: 10px;
-$spacing-l: 20px;
+$spacing-s: 10px;
+$spacing-m: 25px;
+$spacing-l: 50px;
+$spacing-icon: 75px;
 
 /******************************/
 /******** BORDER-RADIUS *******/
@@ -42,6 +45,15 @@ $border-radius-l: 20px;
 /************ MEDIA ***********/
 /******************************/
 
-$media-s: 800px;
-$media-m: 1200px;
-$media-l: 2000px;
+$media-s: 750px;
+$media-m: 1000px;
+$media-l: 1250px;
+$media-xl: 2000px;
+
+/******************************/
+/********* TRANSITION *********/
+/******************************/
+
+$transition-high: 0.25s;
+$transition-medium: 0.5s;
+$transition-low: 1s;

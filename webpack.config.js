@@ -7,7 +7,7 @@ module.exports = {
 	entry: './src/Components/Main/Main.tsx',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js',
+		filename: 'bundle.[contenthash].js',
 	},
 	optimization: {
 		minimizer: [new TerserPlugin({ extractComments: false })],
@@ -28,7 +28,7 @@ module.exports = {
 				test: /\.(woff|woff2|ttf|eof)$/,
 				type: 'asset/resource',
 				generator: {
-					filename: './assets/fonts/[name][ext]'
+					filename: './fonts/[name][ext]'
 				}
 			},
 			{
@@ -40,7 +40,11 @@ module.exports = {
 			},
 			{
 				test: /\.(scss|css)$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				use: [
+					'style-loader',
+					'css-loader',
+					'sass-loader'
+				],
 			},
 		],
 	},

@@ -1,0 +1,156 @@
+@import '../../../General/Variables.scss';
+
+.project {
+    display: none;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: $border-radius-l;
+    overflow: hidden;
+    transition: transform $transition-high ease;
+    transform: scale(1);
+
+    .description {
+        cursor: pointer;
+        position: absolute;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: $color-white;
+        border-radius: $border-radius-l;
+        overflow: hidden;
+        transition: background-color $transition-high ease;
+        background-color: transparent;
+
+        .title,
+        .selection {
+            pointer-events: none;
+            transition: opacity $transition-high ease,
+                        transform $transition-high ease;
+            opacity: 0;
+        }
+
+        .title {
+            font-weight: $font-weight-regular;
+            transform: translateY(-50%);
+            padding-bottom: $spacing-s;
+        }
+
+        .selection {
+            font-weight: $font-weight-thin;
+            transform: translateY(50%);
+            padding-top: $spacing-s;
+        }
+
+        span {
+            height: 1px;
+            width: 40%;
+            background-color: $color-white-transparent;
+            transition: transform $transition-high ease;
+            transform: scaleX(0);
+        }
+    }
+
+    .link{
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        left: 0;
+        margin: $spacing-m;
+        display: flex;
+
+        a{
+            display: block;
+            height: $spacing-icon / 2;
+            width: $spacing-icon / 2;
+            opacity: 0;
+            transform: scale(0);
+
+            img {
+                width: 100%;
+                transition: transform $transition-high ease;
+                transform: scale(1);
+                filter: invert(1);
+
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
+        }
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border-radius: $border-radius-l;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            transform: scale(1.01);
+            transition: filter $transition-high ease;
+            filter: blur(0px);
+        }
+    }
+
+    &:hover {
+        transform: scale(1.025);
+        animation-play-state:paused !important;
+
+        .description {
+            background-color: $color-black-transparent;
+
+            .title,
+            .selection {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+
+            span{
+                transform: scaleX(1);
+            }
+        }
+
+        .link a{
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .image img {
+            filter: blur(3px);
+        }
+    }
+
+    &.show {
+        display: block;
+    }
+
+    &.opacity {
+        opacity: 0;
+    }
+
+    &.fade {
+        animation: fade $transition-low ease-out normal backwards;
+
+        @keyframes fade {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.025);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+
+}

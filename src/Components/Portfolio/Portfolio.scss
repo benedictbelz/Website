@@ -1,0 +1,97 @@
+@import '../../General/Variables.scss';
+
+#portfolio {
+    box-sizing: border-box;
+    padding: calc(#{$spacing-m} * 2 + #{$spacing-icon}) $spacing-m $spacing-m $spacing-m;
+
+    #selection {
+        display: flex;
+        align-items: flex-start;
+	    flex-wrap: wrap;
+	    flex-direction: row;
+        margin-bottom: $spacing-m;
+        
+        li {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+
+            .bold {
+                box-sizing: border-box;
+                font-weight: $font-weight-regular;
+                transition: transform $transition-high ease;
+                transform: translateY(-105%);
+            }
+
+            .regular {
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                font-weight: $font-weight-thin;
+                transition: top $transition-high ease;
+                top: 0;
+            }
+
+            &:not(:last-of-type) {
+                margin-right: $spacing-s / 2;
+            }
+
+            &.current {
+                .bold {
+                    transform: translateY(0%);
+                }
+
+                .regular {
+                    top: 100%;
+                }
+            }
+        }
+    }
+
+    #projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: $spacing-m;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: $spacing-m;
+
+        span:nth-of-type(2) {
+            margin: 0 $spacing-s;
+        }
+
+        span:nth-of-type(3) {
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        #projects {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    @media (max-width: $media-l) {
+        #projects {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    @media (max-width: $media-m) {
+        #projects {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: $media-s) {
+        #projects {
+            grid-template-columns: 1fr;
+        }
+    }
+
+}
