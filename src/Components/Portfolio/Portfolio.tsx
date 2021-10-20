@@ -23,13 +23,19 @@ export class Portfolio extends React.Component<Props, States> {
         }
 	}
 
+    componentDidMount() {
+        window.matchMedia('(max-width: 2000px)').addEventListener('change', () => this.handleFade());
+        window.matchMedia('(max-width: 1250px)').addEventListener('change', () => this.handleFade());
+        window.matchMedia('(max-width: 1000px)').addEventListener('change', () => this.handleFade());
+        window.matchMedia('(max-width: 750px)').addEventListener('change', () => this.handleFade());
+    }
+
     handleFade() {
         // GET VARIABLES
         let timeout: any = [];
         let index = 0;
         const projects = document.querySelectorAll('.project') as unknown as HTMLElement[];
         const visible = document.querySelectorAll('.project.show') as unknown as HTMLElement[];
-
         // RESET FADE
         projects.forEach((project, index) => {
             if (timeout.length !== 0) clearTimeout(timeout[index]);
@@ -38,11 +44,12 @@ export class Portfolio extends React.Component<Props, States> {
         })
         // RECURSIVE FUNCTION
         function fade() {
-            visible[index].classList.remove('opacity');
-            visible[index].offsetWidth;
-            visible[index].classList.add('fade');
-            visible[index].style.webkitAnimationPlayState="paused";
-            visible[index].style.webkitAnimationPlayState="running";
+            const project = visible[index];
+            project.classList.remove('opacity');
+            project.offsetWidth;
+            project.classList.add('fade');
+            project.style.animationPlayState="paused";
+            project.style.animationPlayState="running";
             index++;
             if (index < visible.length)
                 timeout.push(setTimeout(fade, 100));
