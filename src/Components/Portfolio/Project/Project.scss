@@ -11,6 +11,25 @@
         transition: transform $transition-high ease;
         transform: scale(1);
 
+        .label{
+            box-sizing: border-box;
+            pointer-events: none;
+            position: absolute;
+            z-index: 150;
+            top: $spacing-m;
+            right: $spacing-m;
+            height: $spacing-icon / 2;
+            width: $spacing-icon / 2;
+            border-radius: $border-radius-s;
+            overflow: hidden;
+            background-color: $color-white;
+            /* padding: 3px; */
+
+            img{
+                width: 100%;
+            }
+        }
+
         .description {
             cursor: pointer;
             position: absolute;
@@ -129,6 +148,14 @@
                 filter: blur(3px);
             }
         }
+    }
+
+    &.black .wrapper{
+
+    }
+
+    &.white .wrapper{
+        border: $border-width solid $color-black;
     }
 
     &.show {

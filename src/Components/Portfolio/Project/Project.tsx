@@ -19,8 +19,17 @@ export class Project extends React.Component<Props, States> {
 
     render() {
         return (
-            <div className={['project', this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : ''].filter(x => x).join(' ')}>
+            <div className={[
+                'project',
+                this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : '',
+                this.props.project.theme === 'White' ? 'white' : 'black'
+            ].filter(x => x).join(' ')}>
                 <div className='wrapper'>
+                    <div className='label'>
+                        {this.props.project.type === 'Art' && <img src='assets/interface/art.svg' />}
+                        {this.props.project.type === 'Digital' && <img src='assets/interface/digital.svg' />}
+                        {this.props.project.type === 'Film' && <img src='assets/interface/film.svg' />}
+                    </div>
                     <div className='description'>
                         <div>
                             <p className='title uppercase'>{this.props.project.title}</p>

@@ -63,21 +63,53 @@ export class Portfolio extends React.Component<Props, States> {
 		return (
             <div id='portfolio'>
                 <ul id='selection'>
-                    {this.state.selection.map(selection => {
-                        return (
-                            <li 
-                                key={selection} 
-                                className={this.state.currentSelection === selection ? 'current' : ''}
-                                onClick={() => {
-                                    this.setState({ currentSelection: selection });
-                                    setTimeout(() => this.handleFade());
-                                }}
-                            >
-                                <div className='bold'>{selection}</div>
-                                <div className='regular'>{selection}</div>
-                            </li>
-                        )
-                    })}
+                    <li 
+                        className={['uppercase', this.state.currentSelection === 'All' ? 'current' : ''].filter(x => x).join(' ')}
+                        onClick={() => {
+                            if (this.state.currentSelection !== 'All') {
+                                this.setState({ currentSelection: 'All' });
+                                setTimeout(() => this.handleFade());
+                            }
+                        }}
+                    >
+                        All
+                    </li>
+                    <li 
+                        className={['uppercase', this.state.currentSelection === 'Digital' ? 'current' : ''].filter(x => x).join(' ')}
+                        onClick={() => {
+                            if (this.state.currentSelection !== 'Digital') {
+                                this.setState({ currentSelection: 'Digital' });
+                                setTimeout(() => this.handleFade());
+                            }
+                        }}
+                    >
+                        <img src='assets/interface/digital.svg' />
+                        Digital
+                    </li>
+                    <li 
+                        className={['uppercase', this.state.currentSelection === 'Film' ? 'current' : ''].filter(x => x).join(' ')}
+                        onClick={() => {
+                            if (this.state.currentSelection !== 'Film') {
+                                this.setState({ currentSelection: 'Film' });
+                                setTimeout(() => this.handleFade());
+                            }
+                        }}
+                    >
+                        <img src='assets/interface/film.svg' />
+                        Film
+                    </li>
+                    <li 
+                        className={['uppercase', this.state.currentSelection === 'Art' ? 'current' : ''].filter(x => x).join(' ')}
+                        onClick={() => {
+                            if (this.state.currentSelection !== 'Art') {
+                                this.setState({ currentSelection: 'Art' });
+                                setTimeout(() => this.handleFade());
+                            }
+                        }}
+                    >
+                        <img src='assets/interface/art.svg' />
+                        Art
+                    </li>
                 </ul>
                 <div id='projects'>
                     {this.props.projects.map(project => {
@@ -85,9 +117,9 @@ export class Portfolio extends React.Component<Props, States> {
                     })}
                 </div>
                 <div id='footer'>
-                    <span>© Benedict Belz</span>
-                    <span>|</span>
-                    <span>Imprint</span>
+                    <span className='uppercase'>© Benedict Belz</span>
+                    <span></span>
+                    <span className='uppercase'>Imprint</span>
                 </div>
             </div>
         );

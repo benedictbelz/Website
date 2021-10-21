@@ -5,7 +5,7 @@
 $color-white: #FFFFFF;
 $color-white-transparent: #FFFFFF80;
 $color-black: #141414;
-$color-black-transparent: #14141440;
+$color-black-transparent: #14141480;
 
 /******************************/
 /********** FONT-SIZE *********/
@@ -31,7 +31,9 @@ $font-weight-bold: 700;
 $spacing-s: 10px;
 $spacing-m: 25px;
 $spacing-l: 50px;
+$spacing-button: 45px;
 $spacing-icon: 75px;
+$spacing-header: 150px;
 
 /******************************/
 /******** BORDER-RADIUS *******/
@@ -57,3 +59,9 @@ $media-xl: 2000px;
 $transition-high: 0.25s;
 $transition-medium: 0.5s;
 $transition-low: 1s;
+
+/******************************/
+/********* TRANSITION *********/
+/******************************/
+
+$border-width: 1.5px;
