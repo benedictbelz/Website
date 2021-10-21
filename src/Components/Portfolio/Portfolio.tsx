@@ -117,9 +117,9 @@ export class Portfolio extends React.Component<Props, States> {
                     })}
                 </div>
                 <div id='footer'>
-                    <span className='uppercase'>© Benedict Belz</span>
+                    <span>© Benedict Belz</span>
                     <span></span>
-                    <span className='uppercase'>Imprint</span>
+                    <span>Imprint</span>
                 </div>
             </div>
         );

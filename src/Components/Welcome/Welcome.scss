@@ -7,8 +7,8 @@
     background-color: $color-white;
 
     #logo {
-        height: $spacing-icon*1.25;
-        width: $spacing-icon*1.25;
+        height: $spacing-icon-l;
+        width: $spacing-icon-l;
         align-self: flex-end;
 
         img {
@@ -31,8 +31,8 @@
         align-self: flex-start;
 
         img {
-            height: $spacing-icon;
-            width: $spacing-icon;
+            height: $spacing-icon-m;
+            width: $spacing-icon-m;
             transition: transform $transition-medium ease;
             transform: scale(1);
 
