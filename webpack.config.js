@@ -24,13 +24,6 @@ module.exports = {
 				test: /\.(ts|tsx)$/,
 				loader: 'ts-loader',
 			},
-			/* {
-				test: /\.(woff|woff2|ttf|eof)$/,
-				type: 'asset/resource',
-				generator: {
-					filename: './fonts/[name][ext]'
-				}
-			}, */
 			{
 				test: /\.(jpg|png|svg|gif|ico|icns|woff2)$/,
 				loader: 'file-loader',
@@ -42,7 +35,12 @@ module.exports = {
 				test: /\.(scss|css)$/,
 				use: [
 					'style-loader',
-					'css-loader',
+					{
+						loader: "css-loader",
+						options: {
+							url: false,
+						},
+					},
 					'sass-loader'
 				],
 			},
