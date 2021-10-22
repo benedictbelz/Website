@@ -3,6 +3,8 @@
 .project {
     display: none;
     box-sizing: border-box;
+    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-transparent;
+    border-radius: $border-radius-l;
     
     .wrapper {
         position: relative;
@@ -11,7 +13,7 @@
         transition: transform $transition-high ease;
         transform: scale(1);
 
-        .label{
+        .label {
             box-sizing: border-box;
             pointer-events: none;
             position: absolute;
@@ -22,10 +24,8 @@
             width: $spacing-icon-s;
             border-radius: $border-radius-s;
             overflow: hidden;
-            /* background-color: $color-white; */
-            /* border: $border-width solid $color-black; */
 
-            img{
+            img {
                 width: 100%;
             }
         }
@@ -46,35 +46,15 @@
             transition: background-color $transition-high ease;
             background-color: transparent;
     
-            .title,
-            .selection {
+            .title {
                 pointer-events: none;
                 text-align: center;
+                font-weight: $font-weight-regular;
+                padding-bottom: $spacing-s / 2;
                 transition: opacity $transition-high ease,
                             transform $transition-high ease;
+                transform: scale(0.5);
                 opacity: 0;
-            }
-    
-            .title {
-                font-weight: $font-weight-regular;
-                transform: translateY(-50%);
-                padding-bottom: $spacing-s / 2;
-            }
-    
-            .selection {
-                display: none;
-                font-weight: $font-weight-thin;
-                transform: translateY(50%);
-                padding-top: $spacing-s / 2;
-            }
-    
-            .divider {
-                display: none;
-                height: $border-width;
-                width: 100%;
-                background-color: $color-white-transparent;
-                transition: transform $transition-high ease;
-                transform: scaleX(0);
             }
         }
     
@@ -104,6 +84,10 @@
                         transform: scale(1.25);
                     }
                 }
+
+                &:not(:last-of-type) {
+                    margin-right: $spacing-s;
+                }
             }
         }
     
@@ -130,14 +114,9 @@
             .description {
                 background-color: $color-black-transparent;
     
-                .title,
-                .selection {
+                .title {
                     opacity: 1;
-                    transform: translateY(0%);
-                }
-    
-                .divider {
-                    transform: scaleX(1.25);
+                    transform: scale(1);
                 }
             }
     

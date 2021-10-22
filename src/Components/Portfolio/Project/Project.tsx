@@ -22,7 +22,8 @@ export class Project extends React.Component<Props, States> {
             <div className={[
                 'project',
                 this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : '',
-                this.props.project.theme === 'White' ? 'white' : 'black'
+                this.props.project.icon === 'White' ? 'white' : '',
+                this.props.project.icon === 'Black' ? 'black' : ''
             ].filter(x => x).join(' ')}>
                 <div className='wrapper'>
                     <div className='label'>
@@ -31,13 +32,20 @@ export class Project extends React.Component<Props, States> {
                         {this.props.project.type === 'Film' && <img src='assets/interface/film.svg' />}
                     </div>
                     <div className='description'>
-                        <div>
-                            <p className='title uppercase'>{this.props.project.title}</p>
-                            <div className='divider'></div>
-                            <p className='selection'>{this.props.project.type}</p>
-                        </div>
+                        <p className='title uppercase'>{this.props.project.title}</p>
                     </div>
                     <div className='link'>
+                        {this.props.project.github && 
+                            <a 
+                                className='github'
+                                href={this.props.project.github}
+                                target='_blank' 
+                                rel='noopener noreferrer'
+                                title='GitHub'
+                            >
+                                <img src='assets/social/github.svg'/>
+                            </a>
+                        }
                         {this.props.project.vimeo && 
                             <a 
                                 className='vimeo'
@@ -47,6 +55,28 @@ export class Project extends React.Component<Props, States> {
                                 title='Vimeo'
                             >
                                 <img src='assets/social/vimeo.svg'/>
+                            </a>
+                        }
+                        {this.props.project.youtube && 
+                            <a 
+                                className='youtube'
+                                href={this.props.project.youtube}
+                                target='_blank' 
+                                rel='noopener noreferrer'
+                                title='YouTube'
+                            >
+                                <img src='assets/social/youtube.svg'/>
+                            </a>
+                        }
+                        {this.props.project.www && 
+                            <a 
+                                className='www'
+                                href={this.props.project.youtube}
+                                target='_blank' 
+                                rel='noopener noreferrer'
+                                title='Website'
+                            >
+                                <img src='assets/social/www.svg'/>
                             </a>
                         }
                     </div>

@@ -6,7 +6,7 @@ export function getProjects(): TypeProject[] {
             title: 'ZDF Aspekte',
             type: 'Film',
             image: 'assets/projects/zdfaspekte/preview.jpg',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
         {  
@@ -14,7 +14,7 @@ export function getProjects(): TypeProject[] {
             type: 'Film',
             image: 'assets/projects/lockdown/preview.jpg',
             vimeo: 'https://vimeo.com/418880046',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
         {
@@ -22,7 +22,7 @@ export function getProjects(): TypeProject[] {
             type: 'Digital',
             image: 'assets/projects/admiralCloud/preview.jpg',
             www: 'https://www.admiralcloud.com',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {
@@ -30,7 +30,7 @@ export function getProjects(): TypeProject[] {
             type: 'Digital',
             image: 'assets/projects/mmpro/preview.jpg',
             www: 'https://www.mmpro.de',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
         {
@@ -38,14 +38,14 @@ export function getProjects(): TypeProject[] {
             type: 'Film',
             image: 'assets/projects/metropolis/preview.jpg',
             vimeo: 'https://vimeo.com/384393962',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {  
             title: 'Art Attech',
             type: 'Film',
             image: 'assets/projects/artattech/preview.jpg',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {
@@ -53,7 +53,7 @@ export function getProjects(): TypeProject[] {
             type: 'Film',
             image: 'assets/projects/etre/preview.jpg',
             vimeo: 'https://vimeo.com/343962029',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {
@@ -61,7 +61,7 @@ export function getProjects(): TypeProject[] {
             type: 'Film',
             image: 'assets/projects/showreel/preview.jpg',
             vimeo: 'https://vimeo.com/147328634',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {
@@ -69,14 +69,14 @@ export function getProjects(): TypeProject[] {
             type: 'Digital',
             image: 'assets/projects/personalWebsite/preview.jpg',
             github: 'https://github.com/benedictbelz/Webseite',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
         {
             title: 'Keep Going',
             type: 'Digital',
             image: 'assets/projects/keepGoing/preview.jpg',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
         {
@@ -86,7 +86,7 @@ export function getProjects(): TypeProject[] {
             vimeo: 'https://vimeo.com/201318244',
             youtube: 'https://youtu.be/v7zIZeE5dbo',
             www: 'https://en.nanotec.com/knowledge-base/how-a-stepper-motor-works',
-            theme: 'White',
+            icon: 'White',
             border: false
         },
         {
@@ -94,14 +94,14 @@ export function getProjects(): TypeProject[] {
             type: 'Film',
             image: 'assets/projects/droemerKnaur/preview.jpg',
             vimeo: 'https://vimeo.com/161849901',
-            theme: 'Black',
+            icon: 'White',
             border: false
         },
         {
             title: 'Shimmering Nightmare',
             type: 'Art',
             image: 'assets/projects/shimmeringNightmare/preview.jpg',
-            theme: 'Black',
+            icon: 'Black',
             border: false
         },
     ]

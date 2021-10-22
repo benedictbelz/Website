@@ -6,7 +6,7 @@ export type TypeProject = {
     vimeo?: string;
     youtube?: string;
     www?: string;
-    theme: 'Black' | 'White';
+    icon: 'Black' | 'White';
     border: boolean;
 }
 

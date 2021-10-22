@@ -24,15 +24,15 @@ module.exports = {
 				test: /\.(ts|tsx)$/,
 				loader: 'ts-loader',
 			},
-			{
+			/* {
 				test: /\.(woff|woff2|ttf|eof)$/,
 				type: 'asset/resource',
 				generator: {
 					filename: './fonts/[name][ext]'
 				}
-			},
+			}, */
 			{
-				test: /\.(jpg|png|svg|gif|ico|icns)$/,
+				test: /\.(jpg|png|svg|gif|ico|icns|woff2)$/,
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
@@ -55,6 +55,7 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{ from: 'public/assets', to: 'assets' },
+				{ from: 'public/fonts', to: 'fonts' },
 			]
 		})
 	],
