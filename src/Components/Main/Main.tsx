@@ -77,13 +77,13 @@ class Main extends React.Component<Props, States> {
 				<Welcome clickEnter={() => this.clickEnter()}/>
 				<>
 					<Header currentPage={this.state.currentPage} clickLeft={() => this.clickLeft()} clickRight={() => this.clickRight()}/>
-					<Information />
-					<Showroom />
-					<Portfolio projects={this.state.projects} />
+					<Information/>
+					<Showroom/>
+					<Portfolio projects={this.state.projects}/>
 				</>
 			</div>
 		);
 	}
 }
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<Main/>, document.getElementById('root'));

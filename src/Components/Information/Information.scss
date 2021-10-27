@@ -3,4 +3,81 @@
 #information {
     background-color: $color-black;
     color: $color-white;
+
+    .wrapper {
+        box-sizing: border-box;
+        margin: 0 auto;
+        transition: padding $transition-high ease,
+                    width $transition-high ease;
+        padding-top: $spacing-header;
+        padding-bottom: $spacing-l;
+        width: $spacing-wrapper;
+
+        #picture {
+            margin: 0 auto;
+            margin-bottom: $spacing-l;
+            width: $spacing-picture;
+    
+            img {
+                border-radius: 50%;
+                width: 100%;
+            }
+        }
+
+        #introduction {
+            margin-bottom: $spacing-l;
+        }
+
+        #contact div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                margin-right: $spacing-s * 2;
+                width: $spacing-icon-s / 1.5;
+            }
+
+            &:first-of-type {
+                margin-bottom: $spacing-s;
+            }
+
+            &:last-of-type {
+                margin-bottom: $spacing-l;
+            }
+        }
+
+        #social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                display: inline-block;
+                height: $spacing-icon-s * 1.25;
+                width: $spacing-icon-s * 1.25;
+                transition: transform $transition-high ease;
+                transform: scale(1);
+
+                img {
+                    width: 100%;
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: $spacing-s;
+                }
+
+                &:hover{ 
+                    transform: scale(1.25);
+                }
+            }
+        }
+    }
+
+    @media (max-width: $media-s) {
+        .wrapper{
+            width: 100%;
+            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+        }
+    }
 }

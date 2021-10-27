@@ -84,7 +84,7 @@ export class Portfolio extends React.Component<Props, States> {
 									}
 								}}
 							>
-								<img src={'assets/interface/' + selection.toLowerCase() + '.svg'} />
+								<img src={'assets/interface/' + selection.toLowerCase() + '.svg'}/>
 							</li>
 						);
 					})}
@@ -102,8 +102,8 @@ export class Portfolio extends React.Component<Props, States> {
 				</div>
 				<div id="footer">
 					<span>© Benedict Belz</span>
-                    <span className='divider' />
-					<span className='underline'>Imprint</span>
+                    <span className='divider'/>
+					<span className='underline black'>Imprint</span>
 				</div>
 			</div>
 		);

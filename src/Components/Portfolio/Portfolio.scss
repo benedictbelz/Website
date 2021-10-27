@@ -25,9 +25,15 @@
             width: $spacing-button;
             height: $spacing-button;
             box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-transparent;
+            transition: transform $transition-high ease;
+            transform: scale(1);
 
             img {
                 height: $spacing-icon-s;
+            }
+
+            &:hover{
+                transform: scale(1.1);
             }
 
             &:not(:last-of-type) {

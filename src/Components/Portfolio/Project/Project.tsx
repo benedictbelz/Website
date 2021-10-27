@@ -27,9 +27,9 @@ export class Project extends React.Component<Props, States> {
             ].filter(x => x).join(' ')}>
                 <div className='wrapper'>
                     <div className='label'>
-                        {this.props.project.type === 'Art' && <img src='assets/interface/art.svg' />}
-                        {this.props.project.type === 'Digital' && <img src='assets/interface/digital.svg' />}
-                        {this.props.project.type === 'Film' && <img src='assets/interface/film.svg' />}
+                        {this.props.project.type === 'Art' && <img src='assets/interface/art.svg'/>}
+                        {this.props.project.type === 'Digital' && <img src='assets/interface/digital.svg'/>}
+                        {this.props.project.type === 'Film' && <img src='assets/interface/film.svg'/>}
                     </div>
                     <div className='description'>
                         <p className='title uppercase'>{this.props.project.title}</p>
