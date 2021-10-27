@@ -71,7 +71,7 @@ export class Project extends React.Component<Props, States> {
                         {this.props.project.www && 
                             <a 
                                 className='www'
-                                href={this.props.project.youtube}
+                                href={this.props.project.www}
                                 target='_blank' 
                                 rel='noopener noreferrer'
                                 title='Website'

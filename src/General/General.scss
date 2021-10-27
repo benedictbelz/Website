@@ -40,3 +40,26 @@ ul {
     font-size: $font-size-s;
     font-weight: $font-weight-regular;
 }
+
+.underline{
+    cursor: pointer;
+    position: relative;
+
+    &:hover::after{
+        transform: scaleX(1);
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -$border-width;
+        height: $border-width;
+        width: 100%;
+        background-color: $color-black;
+        transform-origin: left;
+        transition: transform $transition-high ease;
+        transform: scaleX(0);
+        border-radius: $border-radius-s;
+    }
+}
