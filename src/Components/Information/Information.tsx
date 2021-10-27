@@ -15,6 +15,17 @@ export class Information extends React.Component<Props, States> {
 		super(props);
 	}
 
+    calculateAge() {
+        const today = new Date();
+        const birth = new Date('1991-04-09');
+        const year = today.getFullYear() - birth.getFullYear();
+        const month = today.getMonth() - birth.getMonth();
+        if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
+            return year-1;
+        else
+            return year;
+    }
+
 	render() {
 		return (
             <div id='information'>
@@ -24,7 +35,7 @@ export class Information extends React.Component<Props, States> {
                     </div>
                     <div id='introduction'>
                         <p>
-                            I'm a <span id="age">29</span> year old Designer living and working in Berlin. I like shaping digital products, creating films and diving into various disciplines of art.<br/><br/>
+                            I'm a <span id="age">{this.calculateAge()}</span> year old Designer living and working in Berlin. I like shaping digital products, creating films and diving into various disciplines of art.<br/><br/>
                             I studied »Visual Communication« at Bauhaus University and am working currently as a freelancer.<br/><br/>
                             Just write an email if you like to contact me. Rumors say that I will respond within the next 24 hours.
                         </p>

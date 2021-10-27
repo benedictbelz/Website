@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Project} from './Project/Project';
-import {TypeProject, TypeProjectSelection} from '../../@types/typeProject';
+import { Project } from './Project/Project';
+import { TypeProject, TypeProjectSelection } from '../../@types/typeProject';
 import './Portfolio.scss';
 
 interface Props {
@@ -41,15 +41,12 @@ export class Portfolio extends React.Component<Props, States> {
 		// GET VARIABLES
 		let timeout: any = [];
 		let index = 0;
-		const projects = document.querySelectorAll(
-			'.project'
-		) as unknown as HTMLElement[];
-		const show = document.querySelectorAll(
-			'.project.show'
-		) as unknown as HTMLElement[];
+		const projects = document.querySelectorAll('.project') as unknown as HTMLElement[];
+		const show = document.querySelectorAll('.project.show') as unknown as HTMLElement[];
+		// RESET TIMEOUT
+		timeout.forEach((t: any) => clearTimeout(t));
 		// RESET FADE
-		projects.forEach((project, index) => {
-			if (timeout.length !== 0) clearTimeout(timeout[index]);
+		projects.forEach(project => {
 			project.classList.add('opacity');
 			project.classList.remove('fade');
 		});

@@ -15,6 +15,11 @@
             height: 100%;
             width: 100%;
         }
+
+        canvas{
+            height: 100% !important;
+            width: 100% !important;
+        }
     }
 
     #message {
@@ -24,6 +29,8 @@
         align-self: center;
         text-align: center;
         margin: $spacing-l 0;
+        line-height: 1.25;
+        /* filter: grayscale(1); */
     }
 
     #enter {

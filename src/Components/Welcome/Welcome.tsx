@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Logo } from './Logo/Logo';
 import './Welcome.scss';
 
 interface Props {
@@ -15,7 +16,8 @@ export class Welcome extends React.Component<Props, States> {
 		return (
             <div id='welcome'>
                 <div id='logo'>
-                    <img src='assets/interface/logo.gif' draggable='false' />
+                    {/* <img src='assets/interface/logo.gif' draggable='false' /> */}
+                    <Logo/>
                 </div>
                 <div id='message'>
                     Welcome to my website.<br />

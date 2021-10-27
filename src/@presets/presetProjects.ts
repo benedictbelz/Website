@@ -20,7 +20,7 @@ export function getProjects(): TypeProject[] {
         {
             title: 'AdmiralCloud',
             type: 'Digital',
-            image: 'assets/projects/admiralCloud/preview.jpg',
+            image: 'assets/projects/admiralcloud/preview.jpg',
             www: 'https://www.admiralcloud.com',
             icon: 'White',
             border: false
