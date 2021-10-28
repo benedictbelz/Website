@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Scrollbar } from '../../Scrollbar/Scrollbar';
 import './Information.scss';
 
 interface Props {
@@ -17,9 +18,11 @@ export class Information extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <div id='information'>
-                <h1>This is the information</h1>
-            </div>
+            <Scrollbar color={'white'} element={'imprint'}>
+                <div id='imprint'>
+                    <h1>This is the information</h1>
+                </div>
+            </Scrollbar>
         );
 	}
 }

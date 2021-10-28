@@ -6,6 +6,7 @@ body {
     overflow: hidden;
 
     #main {
+        position: relative;
         height: 100%;
         width: 100%;
 
@@ -27,11 +28,14 @@ body {
         }
 
         #imprint,
-        #information {
+        #information,
+        .scrollbar.imprint,
+        .scrollbar.information {
             transform: translate(100%, 0%);
         }
 
-        #showroom {
+        #showroom,
+        .scrollbar.showroom {
             transform: translate(-100%, 0%);
         }
 
@@ -40,28 +44,56 @@ body {
         }
 
         &.imprint {
-            #imprint { transform: translate(0%, 0%); }
-            #portfolio { transform: translate(-100%, 0%); }
+            #imprint,
+            .scrollbar.imprint { 
+                transform: translate(0%, 0%);
+            }
+
+            #portfolio,
+            .scrollbar.portfolio { 
+                transform: translate(-100%, 0%);
+            }
         }
 
         &.information {
-            #information { transform: translate(0%, 0%); }
-            #portfolio { transform: translate(-100%, 0%); }
+            #information,
+            .scrollbar.information {
+                transform: translate(0%, 0%);
+            }
+
+            #portfolio,
+            .scrollbar.portfolio {
+                transform: translate(-100%, 0%);
+            }
         }
 
         &.portfolio {
-            #portfolio { transform: translate(0%, 0%); }
+            #portfolio,
+            .scrollbar.portfolio {
+                transform: translate(0%, 0%);
+            }
         }
 
         &.showroom {
-            #portfolio { transform: translate(100%, 0%); }
-            #showroom { transform: translate(0%, 0%); }
+            #portfolio,
+            .scrollbar.showroom {
+                transform: translate(100%, 0%);
+            }
+
+            #showroom,
+            .scrollbar.showroom {
+                transform: translate(0%, 0%);
+            }
         }
 
         &.welcome {
             #header { transform: translate(0%, 100vh) }
-            #portfolio { transform: translate(0%, 100%); }
             #welcome { transform: translate(0%, 0%); }
+
+            #portfolio,
+            .scrollbar.portfolio {
+                transform: translate(0%, 100%);
+            }
         }
     }
 }

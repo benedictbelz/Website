@@ -1,4 +1,4 @@
-@import '../../General/Variables.scss';
+@import '../../../General/Variables.scss';
 
 #portfolio {
     box-sizing: border-box;
@@ -12,6 +12,8 @@
         font-size: $font-size-m;
         height: $spacing-header;
         width: 100%;
+        transition: height $transition-medium ease,
+                    margin $transition-medium ease;
         
         li {
             box-sizing: border-box;
@@ -95,6 +97,14 @@
     @media (max-width: $media-s) {
         #projects {
             grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        #selection {
+            height: $spacing-button;
+            margin-top: $spacing-header;
+            margin-bottom: $spacing-m * 2;
         }
     }
 

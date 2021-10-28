@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Page } from '../Main/Main';
+import { Page } from '../Main';
 import './Header.scss';
 
 interface Props {

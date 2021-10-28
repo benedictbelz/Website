@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Header } from '../Header/Header';
-import { Information } from '../Information/Information';
-import { Portfolio } from '../Portfolio/Portfolio';
-import { Showroom } from '../Showroom/Showroom';
-import { Welcome } from '../Welcome/Welcome';
+import { Header } from './Header/Header';
+import { Information } from './Information/Information';
+import { Portfolio } from './Portfolio/Portfolio';
+import { Showroom } from './Showroom/Showroom';
+import { Welcome } from './Welcome/Welcome';
 import { getProjects } from '../../@presets/presetProjects';
 import { TypeProject } from '../../@types/typeProject';
 import '../../General/General.scss';
@@ -18,6 +18,7 @@ interface Props {
 interface States {
 	currentPage: Page;
 	currentDevice: Device;
+	device: 'Desktop' | 'Mobile' | null;
 	isLoading: boolean;
 	projects: TypeProject[];
 }
@@ -33,6 +34,7 @@ class Main extends React.Component<Props, States> {
 		this.state = {
 			currentPage: 'Welcome',
 			currentDevice: 'Desktop',
+			device: null,
 			isLoading: false,
 			projects: getProjects(),
 		}
@@ -79,11 +81,11 @@ class Main extends React.Component<Props, States> {
 					<Header currentPage={this.state.currentPage} clickLeft={() => this.clickLeft()} clickRight={() => this.clickRight()}/>
 					<Information/>
 					<Showroom/>
-					<Portfolio projects={this.state.projects}/>
+					<Portfolio projects={this.state.projects} />
 				</>
 			</div>
 		);
 	}
 }
 
-ReactDOM.render(<Main/>, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));

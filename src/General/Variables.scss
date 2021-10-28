@@ -39,6 +39,7 @@ $spacing-button: 45px;
 $spacing-header: 150px;
 $spacing-picture: 300px;
 $spacing-wrapper: 500px;
+$spacing-scrollbar: 5px;
 
 /******************************/
 /******** BORDER-RADIUS *******/
@@ -52,9 +53,10 @@ $border-radius-l: 20px;
 /************ MEDIA ***********/
 /******************************/
 
-$media-s: 750px;
-$media-m: 1000px;
-$media-l: 1250px;
+$media-xs: 500px;
+$media-s: 600px;
+$media-m: 900px;
+$media-l: 1200px;
 $media-xl: 2000px;
 
 /******************************/

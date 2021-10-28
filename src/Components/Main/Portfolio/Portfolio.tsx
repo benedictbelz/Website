@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Project } from './Project/Project';
-import { TypeProject, TypeProjectSelection } from '../../@types/typeProject';
+import { Scrollbar } from '../../Scrollbar/Scrollbar';
+import { TypeProject, TypeProjectSelection } from '../../../@types/typeProject';
 import './Portfolio.scss';
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 
 interface States {
+	height: number;
+	scroll: number;
 	currentSelection: TypeProjectSelection;
 	selection: TypeProjectSelection[];
 }
@@ -17,6 +20,8 @@ export class Portfolio extends React.Component<Props, States> {
 		super(props);
 
 		this.state = {
+			height: 0,
+			scroll: 0,
 			currentSelection: 'All',
 			selection: ['All', 'Digital', 'Film', 'Art'],
 		};
@@ -27,13 +32,13 @@ export class Portfolio extends React.Component<Props, States> {
 			.matchMedia('(max-width: 2000px)')
 			.addEventListener('change', () => this.handleFade());
 		window
-			.matchMedia('(max-width: 1250px)')
+			.matchMedia('(max-width: 1200px)')
 			.addEventListener('change', () => this.handleFade());
 		window
-			.matchMedia('(max-width: 1000px)')
+			.matchMedia('(max-width: 900px)')
 			.addEventListener('change', () => this.handleFade());
 		window
-			.matchMedia('(max-width: 750px)')
+			.matchMedia('(max-width: 600px)')
 			.addEventListener('change', () => this.handleFade());
 	}
 
@@ -67,42 +72,44 @@ export class Portfolio extends React.Component<Props, States> {
 
 	render() {
 		return (
-			<div id="portfolio">
-				<ul id="selection">
-					{this.state.selection.map(selection => {
-						return (
-							<li
-								key={selection}
-								className={['uppercase', this.state.currentSelection === selection ? 'current' : ''].filter((x) => x).join(' ')}
-								onClick={() => {
-									if (this.state.currentSelection !== selection) {
-										this.setState({ currentSelection: selection });
-										setTimeout(() => this.handleFade());
-									}
-								}}
-							>
-								<img src={'assets/interface/' + selection.toLowerCase() + '.svg'}/>
-							</li>
-						);
-					})}
-				</ul>
-				<div id="projects">
-					{this.props.projects.map(project => {
-						return (
-							<Project
-								key={project.title}
-								project={project}
-								currentSelection={this.state.currentSelection}
-							/>
-						);
-					})}
+			<Scrollbar color={'black'} element={'portfolio'}>
+				<div id="portfolio">
+					<ul id="selection">
+						{this.state.selection.map(selection => {
+							return (
+								<li
+									key={selection}
+									className={this.state.currentSelection === selection ? 'current' : ''}
+									onClick={() => {
+										if (this.state.currentSelection !== selection) {
+											this.setState({ currentSelection: selection });
+											setTimeout(() => this.handleFade());
+										}
+									}}
+								>
+									<img src={'assets/interface/' + selection.toLowerCase() + '.svg'}/>
+								</li>
+							);
+						})}
+					</ul>
+					<div id="projects">
+						{this.props.projects.map(project => {
+							return (
+								<Project
+									key={project.title}
+									project={project}
+									currentSelection={this.state.currentSelection}
+								/>
+							);
+						})}
+					</div>
+					<div id="footer">
+						<span>© Benedict Belz</span>
+						<span className='divider'/>
+						<span className='underline black'>Imprint</span>
+					</div>
 				</div>
-				<div id="footer">
-					<span>© Benedict Belz</span>
-                    <span className='divider'/>
-					<span className='underline black'>Imprint</span>
-				</div>
-			</div>
+			</Scrollbar>
 		);
 	}
 }

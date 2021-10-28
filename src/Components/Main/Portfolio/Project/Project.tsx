@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TypeProject, TypeProjectSelection } from '../../../@types/typeProject';
+import { TypeProject, TypeProjectSelection } from '../../../../@types/typeProject';
 import './Project.scss';
 
 interface Props {

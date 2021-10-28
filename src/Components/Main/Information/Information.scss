@@ -1,4 +1,4 @@
-@import '../../General/Variables.scss';
+@import '../../../General/Variables.scss';
 
 #information {
     background-color: $color-black;
@@ -14,9 +14,12 @@
         width: $spacing-wrapper;
 
         #picture {
+            box-sizing: border-box;
             margin: 0 auto;
             margin-bottom: $spacing-l;
             width: $spacing-picture;
+            transition: padding $transition-medium ease,
+                        width $transition-medium ease;
     
             img {
                 border-radius: 50%;
@@ -39,7 +42,7 @@
             }
 
             &:first-of-type {
-                margin-bottom: $spacing-s;
+                margin-bottom: $spacing-s * 2;
             }
 
             &:last-of-type {
@@ -80,4 +83,12 @@
             padding: $spacing-header $spacing-m $spacing-l $spacing-m;
         }
     }
+
+    @media (max-width: $media-xs) {
+        .wrapper #picture {
+            padding: 0 $spacing-l;
+            width: 100%;
+        }
+    }
+
 }

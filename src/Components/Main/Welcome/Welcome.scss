@@ -1,4 +1,4 @@
-@import '../../General/Variables.scss';
+@import '../../../General/Variables.scss';
 
 #welcome {
     display: grid;
@@ -30,7 +30,6 @@
         text-align: center;
         margin: $spacing-l 0;
         line-height: 1.25;
-        /* filter: grayscale(1); */
     }
 
     #enter {
