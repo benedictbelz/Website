@@ -34,10 +34,6 @@
                 height: $spacing-icon-s;
             }
 
-            &:hover{
-                transform: scale(1.1);
-            }
-
             &:not(:last-of-type) {
                 margin-right: $spacing-s;
             }
@@ -48,6 +44,31 @@
 
                 img {
                     filter: invert(1);
+                }
+            }
+
+            &.opacity {
+                opacity: 0;
+            }
+
+            &.fade {
+                animation-name: fade;
+                animation-duration: $transition-low;
+                animation-timing-function: ease-out;
+                animation-fill-mode: backwards;
+
+                @keyframes fade {
+                    0% {
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    70% {
+                        transform: scale(1.025);
+                    }
+                    100% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -66,12 +87,14 @@
         align-items: center;
         height: $spacing-header;
         font-weight: $font-weight-regular;
+        transition: height $transition-medium ease,
+                    margin $transition-medium ease;
 
         .divider {
             background-color: $color-black;
             border-radius: 50%;
-            height: $border-width * 2;
-            width: $border-width * 2;
+            height: $border-underline * 2;
+            width: $border-underline * 2;
             margin: 0 $spacing-s;
         }
     }
@@ -106,6 +129,17 @@
             margin-top: $spacing-header;
             margin-bottom: $spacing-m * 2;
         }
-    }
 
+        #footer{
+            height: $spacing-m;
+            margin-top: $spacing-m;
+            margin-bottom: $spacing-m;
+        }
+    }
+}
+
+#main.desktop #portfolio {
+    #selection li:hover {
+        transform: scale(1.1);
+    }
 }

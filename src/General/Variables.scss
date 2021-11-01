@@ -15,6 +15,8 @@ $font-size-s: 14px;
 $font-size-m: 16px;
 $font-size-l: 20px;
 $font-size-xl: 24px;
+$font-size-h1: 32px;
+$font-size-h2: 24px;
 
 /******************************/
 /********* FONT-WEIGHT ********/
@@ -37,9 +39,10 @@ $spacing-icon-m: 75px;
 $spacing-icon-l: 100px;
 $spacing-button: 45px;
 $spacing-header: 150px;
-$spacing-picture: 300px;
+$spacing-picture: 250px;
 $spacing-wrapper: 500px;
 $spacing-scrollbar: 5px;
+$spacing-loader: 75px;
 
 /******************************/
 /******** BORDER-RADIUS *******/
@@ -68,10 +71,11 @@ $transition-medium: 0.5s;
 $transition-low: 1s;
 
 /******************************/
-/********* TRANSITION *********/
+/******** BORDER WIDTH ********/
 /******************************/
 
-$border-width: 1.5px;
+$border-circle: 2.5px;
+$border-underline: 1.5px;
 
 /******************************/
 /********* BOX-SHADOW *********/

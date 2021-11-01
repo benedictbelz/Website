@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Page } from '../Main';
+import { Page } from '../../../@types/typeCommon';
 import './Header.scss';
 
 interface Props {
@@ -15,14 +15,10 @@ interface States {
 
 export class Header extends React.Component<Props, States> {
 
-    constructor(props: any) {
-		super(props);
-
-        this.state = {
-            isClickedLeft: false,
-            isClickedRight: false
-        }
-	}
+    state: States = {
+        isClickedLeft: false,
+        isClickedRight: false
+    }
 
 	render() {
 		return (

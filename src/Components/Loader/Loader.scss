@@ -1,0 +1,52 @@
+@import '../../General/Variables.scss';
+
+.loader{
+    position: absolute;
+    pointer-events: none;
+    z-index: 500;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity $transition-medium ease;
+    opacity: 0;
+
+    #circle{
+        box-sizing: border-box;
+        position: absolute;
+        height: $spacing-loader;
+        width: $spacing-loader;
+        border-radius: 50%;
+        border-top: $border-circle solid $color-black;
+        border-right: $border-circle solid $color-black;
+        border-bottom: $border-circle solid $color-black;
+        border-left: $border-circle solid transparent;
+        animation-name: circle;
+        animation-duration: $transition-low;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        @keyframes circle {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+    }
+
+    &.show{
+        opacity: 1;
+    }
+
+    &.black{
+        background-color: $color-black;
+    }
+
+    &.white{
+        background-color: $color-white;
+    }
+
+}

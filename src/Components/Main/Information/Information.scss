@@ -69,10 +69,6 @@
                 &:not(:last-of-type) {
                     margin-right: $spacing-s;
                 }
-
-                &:hover{ 
-                    transform: scale(1.25);
-                }
             }
         }
     }
@@ -91,4 +87,10 @@
         }
     }
 
+}
+
+#main.desktop #information {
+    #social a:hover {
+        transform: scale(1.25);
+    }
 }

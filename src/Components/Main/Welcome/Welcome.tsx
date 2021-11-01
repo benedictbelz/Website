@@ -1,23 +1,40 @@
 import * as React from 'react';
+import { Loader } from '../../Loader/Loader';
 import { Logo } from './Logo/Logo';
+import { Device } from '../../../@types/typeCommon';
 import './Welcome.scss';
 
 interface Props {
+    currentDevice: Device;
     clickEnter: Function;
+    isLoading: boolean;
+    percentage: number;
 }
 
 interface States {
-	
+	isVisible: boolean;
 }
 
 export class Welcome extends React.Component<Props, States> {
 
+    state: States = {
+        isVisible: false
+    }
+
+    componentDidUpdate(prevProps: any) {
+        if (!this.props.isLoading && prevProps.isLoading)
+            setTimeout(() => this.setState({ isVisible: true }), 750);
+    }
+
 	render() {
 		return (
-            <div id='welcome'>
+            <div id='welcome' className={this.state.isVisible ? 'show' : ''}>
+                <Loader color='White' isLoading={this.props.isLoading} percentage={this.props.percentage}/>
                 <div id='logo'>
-                    {/* <img src='assets/interface/logo.gif' draggable='false' /> */}
-                    <Logo/>
+                    {this.props.currentDevice === 'Desktop'
+                        ? <Logo isVisible={this.state.isVisible}/>
+                        : this.state.isVisible ? <img src='assets/interface/logo.gif' draggable='false'/> : null
+                    }
                 </div>
                 <div id='message'>
                     Welcome to my website.<br />

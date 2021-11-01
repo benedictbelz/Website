@@ -1,6 +1,7 @@
 @import '../../../../General/Variables.scss';
 
 .project {
+    cursor: pointer;
     display: none;
     box-sizing: border-box;
     box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-transparent;
@@ -30,8 +31,7 @@
             }
         }
 
-        .description {
-            cursor: pointer;
+        .description {        
             position: absolute;
             z-index: 100;
             display: flex;
@@ -77,10 +77,6 @@
                     transition: transform $transition-high ease;
                     transform: scale(1);
                     filter: invert(1);
-    
-                    &:hover {
-                        transform: scale(1.25);
-                    }
                 }
 
                 &:not(:last-of-type) {
@@ -105,41 +101,10 @@
                 filter: blur(0px);
             }
         }
-    
-        &:hover {
-            transform: scale(1.025);
-    
-            .description {
-                background-color: $color-black-transparent;
-    
-                .title {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-    
-            .link a{
-                opacity: 1;
-                transform: scale(1);
-            }
-    
-            .image img {
-                filter: blur(3px);
-            }
-        }
-    }
-
-    &.black:hover .wrapper .label{
-        transition: filter 0.25s ease;
-        filter: invert(1);
     }
 
     &.white .wrapper .label{
         filter: invert(1);
-    }
-
-    &.border .wrapper{
-        border: $border-width solid $color-black;
     }
 
     &.show {
@@ -170,5 +135,37 @@
             }
         }
     }
+}
 
+#main.desktop .project {
+    .link a img:hover {
+        transform: scale(1.25);
+    }
+
+    .wrapper:hover {
+        transform: scale(1.025);
+    
+        .description {
+            background-color: $color-black-transparent;
+    
+            .title {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    
+        .link a {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        .image img {
+            filter: blur(3px);
+        }
+    }
+
+    &.black .wrapper:hover .label {
+        transition: filter 0.25s ease;
+        filter: invert(1);
+    }
 }

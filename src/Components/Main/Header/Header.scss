@@ -26,7 +26,6 @@
 
         img {
             position: absolute;
-            width: 100%;
             opacity: 0;
             width: 0%;
             transition: opacity $transition-high ease,
@@ -38,17 +37,19 @@
                 width: 100%;
             }
         }
+    }
+}
 
-        &:first-child:hover {
-            #logo_back { transform: translateX(5%); }
-            #logo_front { transform: translateX(-5%); }
-            #arrow_up { transform: scale(1.25); }
-        }
+#main.desktop #header {
+    div:first-child:hover {
+        #logo_back { transform: translateX(5%); }
+        #logo_front { transform: translateX(-5%); }
+        #arrow_up { transform: scale(1.25); }
+    }
 
-        &:last-child:hover {
-            #information_front { transform: translateY(-5%); }
-            #arrow_left { transform: scale(1.25); }
-            #arrow_right { transform: scale(1.25); }
-        }
+    div:last-child:hover {
+        #information_front { transform: translateY(-5%); }
+        #arrow_left { transform: scale(1.25); }
+        #arrow_right { transform: scale(1.25); }
     }
 }

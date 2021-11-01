@@ -1,6 +1,7 @@
 @import '../../../General/Variables.scss';
 
 #welcome {
+    position: relative;
     display: grid;
     grid-template-rows: 1fr auto 1fr;
     justify-items: center;
@@ -10,15 +11,14 @@
         height: $spacing-icon-l;
         width: $spacing-icon-l;
         align-self: flex-end;
+        transition: opacity $transition-low ease,
+                    transform $transition-low ease;
+        opacity: 0;
+        transform: translateY(-10%);
 
         img {
             height: 100%;
             width: 100%;
-        }
-
-        canvas{
-            height: 100% !important;
-            width: 100% !important;
         }
     }
 
@@ -30,21 +30,49 @@
         text-align: center;
         margin: $spacing-l 0;
         line-height: 1.25;
+        letter-spacing: 0.25;
+        transition: opacity $transition-low ease,
+                    transform $transition-low ease;
+        opacity: 0;
+        transform: scale(0.75);
     }
 
     #enter {
         cursor: pointer;
         align-self: flex-start;
+        transition: opacity $transition-low ease,
+                    transform $transition-low ease;
+        opacity: 0;
+        transform: translateY(10%);
 
         img {
             height: $spacing-icon-m;
             width: $spacing-icon-m;
             transition: transform $transition-medium ease;
             transform: scale(1);
-
-            &:hover {
-                transform: scale(1.25);
-            }
         }
+    }
+
+    &.show {
+        #logo {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    
+        #message {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        #enter {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}
+
+#main.desktop {
+    #enter img:hover {
+        transform: scale(1.25);
     }
 }

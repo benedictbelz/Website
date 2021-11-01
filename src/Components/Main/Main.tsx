@@ -1,51 +1,86 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Header } from './Header/Header';
+import { Imprint } from './Imprint/Imprint';
 import { Information } from './Information/Information';
 import { Portfolio } from './Portfolio/Portfolio';
 import { Showroom } from './Showroom/Showroom';
 import { Welcome } from './Welcome/Welcome';
 import { getProjects } from '../../@presets/presetProjects';
+import { Browser, Device, Page } from '../../@types/typeCommon';
 import { TypeProject } from '../../@types/typeProject';
 import '../../General/General.scss';
 import './Main.scss';
 
-
-interface Props {
-
-}
-
 interface States {
-	currentPage: Page;
+	currentBrowser: Browser;
 	currentDevice: Device;
-	device: 'Desktop' | 'Mobile' | null;
+	currentPage: Page;
 	isLoading: boolean;
+	isTransition: boolean;
+	percentage: number;
 	projects: TypeProject[];
 }
+class Main extends React.Component<{}, States> {
 
-export type Page = 'Imprint' | 'Information' | 'Portfolio' | 'Showroom' | 'Welcome';
-export type Device = 'Desktop' | 'Mobile';
-
-class Main extends React.Component<Props, States> {
-
-	constructor(props: any) {
-		super(props);
-
-		this.state = {
-			currentPage: 'Welcome',
-			currentDevice: 'Desktop',
-			device: null,
-			isLoading: false,
-			projects: getProjects(),
-		}
+	state: States = {
+		currentBrowser: null,
+		currentDevice: null,
+		currentPage: 'Welcome',
+		isLoading: true,
+		isTransition: false,
+		percentage: 0,
+		projects: getProjects(),
 	}
 
 	componentDidMount() {
+		this.initBrowser();
+		this.initDevice();
+		this.initPreload();
+	}
 
+	initBrowser() {
+		if (navigator.userAgent.indexOf('Chrome') > -1)
+			this.setState({ currentBrowser: 'Chrome' });
+		if (navigator.userAgent.indexOf('Firefox') > -1)
+			this.setState({ currentBrowser: 'Firefox' });
+		if (navigator.userAgent.indexOf('MSIE') > -1)
+			this.setState({ currentBrowser: 'Microsoft' });
+		if (navigator.userAgent.toLowerCase().indexOf('op') > -1)
+			this.setState({ currentBrowser: 'Opera' });
+		if (navigator.userAgent.indexOf('Safari') > -1)
+			this.setState({ currentBrowser: 'Safari' });
+	}
+
+	initDevice() {
+		if ('ontouchstart' in window || 'onmsgesturechange' in window)
+			this.setState({ currentDevice: 'Mobile' });
+		else
+			this.setState({ currentDevice: 'Desktop' });
+	}
+
+	initPreload() {
+		let images = document.images;
+		let index = 0;
+		const preload = () => {
+			const image = new Image();
+			image.src = images[index].src;
+			image.onload = () => {
+				index++;
+				if (index === images.length)
+					this.setState({ isLoading: false, percentage: 100 });
+				else {
+					this.setState({ percentage: Math.floor(index/images.length*100) });
+					setTimeout(preload, 5);
+				}
+			}
+		}
+		preload();
 	}
 
 	clickEnter() {
-		this.setState({ currentPage: 'Portfolio' });
+		this.setState({ currentPage: 'Portfolio', isTransition: true });
+		setTimeout(() => this.setState({ isTransition: false }), 500);
 	}
 
 	clickLeft() {
@@ -54,9 +89,14 @@ class Main extends React.Component<Props, States> {
 
 	clickRight() {
 		if (this.state.currentPage === 'Portfolio')
-			this.setState({ currentPage: 'Information' });
-		if (this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
-			this.setState({ currentPage: 'Portfolio' });
+			this.setState({ currentPage: 'Information', isTransition: true });
+		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
+			this.setState({ currentPage: 'Portfolio', isTransition: true });
+		setTimeout(() => this.setState({ isTransition: false }), 500);
+	}
+
+	clickImprint() {
+		this.setState({ currentPage: 'Imprint', isTransition: true })
 	}
 
 	clickProject() {
@@ -69,19 +109,22 @@ class Main extends React.Component<Props, States> {
 				id='main'
 				className={[
 					this.state.isLoading ? 'loading' : '',
+					this.state.isTransition ? 'transition' : '',
+					this.state.currentDevice === 'Desktop' ? 'desktop' : 'mobile',
 					this.state.currentPage === 'Imprint' ? 'imprint' : '',
 					this.state.currentPage === 'Information' ? 'information' : '',
 					this.state.currentPage === 'Portfolio' ? 'portfolio' : '',
 					this.state.currentPage === 'Showroom' ? 'showroom' : '',
-					this.state.currentPage === 'Welcome' ? 'welcome' : ''	
+					this.state.currentPage === 'Welcome' ? 'welcome' : ''
 				].filter(x => x).join(' ')}
 			>
-				<Welcome clickEnter={() => this.clickEnter()}/>
+				<Welcome currentDevice={this.state.currentDevice} clickEnter={() => this.clickEnter()} isLoading={this.state.isLoading} percentage={this.state.percentage}/>
 				<>
 					<Header currentPage={this.state.currentPage} clickLeft={() => this.clickLeft()} clickRight={() => this.clickRight()}/>
-					<Information/>
-					<Showroom/>
-					<Portfolio projects={this.state.projects} />
+					<Imprint currentDevice={this.state.currentDevice}/>
+					<Information currentDevice={this.state.currentDevice}/>
+					<Showroom currentDevice={this.state.currentDevice}/>
+					<Portfolio currentDevice={this.state.currentDevice} currentPage={this.state.currentPage} projects={this.state.projects} clickImprint={() => this.clickImprint()}/>
 				</>
 			</div>
 		);

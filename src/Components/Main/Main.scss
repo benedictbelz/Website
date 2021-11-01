@@ -12,7 +12,7 @@ body {
 
         #header {
             transform: translate(0%, 0vh);
-            transition: transform $transition-medium ease;
+            
         }
 
         #imprint,
@@ -93,6 +93,17 @@ body {
             #portfolio,
             .scrollbar.portfolio {
                 transform: translate(0%, 100%);
+            }
+        }
+
+        &.transition {
+            #header,
+            #imprint,
+            #information,
+            #portfolio,
+            #showroom,
+            #welcome {
+                transition: transform $transition-medium ease;
             }
         }
     }

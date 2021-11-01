@@ -1,8 +1,10 @@
 import * as React from 'react';
+import { Device } from '../../@types/typeCommon';
 import './Scrollbar.scss';
 
 interface Props {
     color: 'black' | 'white';
+    currentDevice: Device;
     element: string;
 }
 
@@ -13,20 +15,18 @@ interface States {
 
 export class Scrollbar extends React.Component<Props, States> {
 
-    constructor(props: any) {
-        super(props)
-
-        this.state = {
-            element: null,
-            scroll: 0
-        }
+    state: States = {
+        element: null,
+        scroll: 0
     }
 
-    componentDidMount() {
-        const element = document.getElementById(this.props.element);
-        this.setState({ element });
-        element.addEventListener('scroll', () => this.update());
-        window.addEventListener('resize', () => this.update());
+    componentDidUpdate(prevProps: any) {
+        if (this.props.currentDevice === 'Desktop' && !prevProps.currentDevice) {
+            const element = document.getElementById(this.props.element);
+            this.setState({ element });
+            element.addEventListener('scroll', () => this.update());
+            window.addEventListener('resize', () => this.update());
+        }
     }
 
     update() {
@@ -46,13 +46,15 @@ export class Scrollbar extends React.Component<Props, States> {
 		return (
             <>
                 {this.props.children}
-                <div className={[
-                    'scrollbar',
-                    this.state.element ? this.state.element.id : '',
-                    this.props.color
-                ].filter((x) => x).join(' ')}>
-                    <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
-                </div>
+                {this.state.element && 
+                    <div className={[
+                        'scrollbar',
+                        this.state.element ? this.state.element.id : '',
+                        this.props.color
+                    ].filter((x) => x).join(' ')}>
+                        <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
+                    </div>
+                }
             </>
         );
 	}
