@@ -3,4 +3,14 @@
 #showroom {
     background-color: $color-black;
     color: $color-white;
+
+    .wrapper {
+        box-sizing: border-box;
+        margin: 0 auto;
+        transition: padding $transition-high ease,
+                    width $transition-high ease;
+        padding-top: $spacing-header;
+        padding-bottom: $spacing-l;
+        width: $spacing-wrapper;
+    }
 }

@@ -1,6 +1,6 @@
 @import '../../General/Variables.scss';
 
-.loader{
+.loader {
     position: absolute;
     pointer-events: none;
     z-index: 500;
@@ -12,16 +12,12 @@
     transition: opacity $transition-medium ease;
     opacity: 0;
 
-    #circle{
+    #circle {
         box-sizing: border-box;
         position: absolute;
         height: $spacing-loader;
         width: $spacing-loader;
         border-radius: 50%;
-        border-top: $border-circle solid $color-black;
-        border-right: $border-circle solid $color-black;
-        border-bottom: $border-circle solid $color-black;
-        border-left: $border-circle solid transparent;
         animation-name: circle;
         animation-duration: $transition-low;
         animation-iteration-count: infinite;
@@ -37,16 +33,31 @@
         }
     }
 
-    &.show{
+    &.show {
         opacity: 1;
     }
 
-    &.black{
+    &.black {
+        color: $color-white;
         background-color: $color-black;
+
+        #circle {
+            border-top: $border-circle solid $color-white;
+            border-right: $border-circle solid $color-white;
+            border-bottom: $border-circle solid $color-white;
+            border-left: $border-circle solid transparent;
+        }
     }
 
-    &.white{
+    &.white {
+        color: $color-black;
         background-color: $color-white;
-    }
 
+        #circle {
+            border-top: $border-circle solid $color-black;
+            border-right: $border-circle solid $color-black;
+            border-bottom: $border-circle solid $color-black;
+            border-left: $border-circle solid transparent;
+        }
+    }
 }

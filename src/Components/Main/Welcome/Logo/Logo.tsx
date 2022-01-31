@@ -64,6 +64,7 @@ export class Logo extends React.Component<Props,{}> {
 
         // CREATE RENDERER
         const renderer = new THREE.WebGLRenderer({ antialias: true });
+        // SET COLOR
         renderer.setClearColor('#FFFFFF');
         // CREATE CANVAS
         document.getElementById('logo').appendChild(renderer.domElement);

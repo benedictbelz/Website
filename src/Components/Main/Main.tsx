@@ -7,15 +7,16 @@ import { Portfolio } from './Portfolio/Portfolio';
 import { Showroom } from './Showroom/Showroom';
 import { Welcome } from './Welcome/Welcome';
 import { getProjects } from '../../@presets/presetProjects';
-import { Browser, Device, Page } from '../../@types/typeCommon';
+import { TypeBrowser, TypeDevice, TypePage } from '../../@types/typeCommon';
 import { TypeProject } from '../../@types/typeProject';
 import '../../General/General.scss';
 import './Main.scss';
 
-interface States {
-	currentBrowser: Browser;
-	currentDevice: Device;
-	currentPage: Page;
+interface States {
+	currentBrowser: TypeBrowser | null;
+	currentDevice: TypeDevice | null;
+	currentPage: TypePage;
+	currentProject: TypeProject | null;
 	isLoading: boolean;
 	isTransition: boolean;
 	percentage: number;
@@ -27,6 +28,7 @@ class Main extends React.Component<{}, States> {
 		currentBrowser: null,
 		currentDevice: null,
 		currentPage: 'Welcome',
+		currentProject: null,
 		isLoading: true,
 		isTransition: false,
 		percentage: 0,
@@ -36,7 +38,7 @@ class Main extends React.Component<{}, States> {
 	componentDidMount() {
 		this.initBrowser();
 		this.initDevice();
-		this.initPreload();
+		this.initLoading();
 	}
 
 	initBrowser() {
@@ -53,29 +55,29 @@ class Main extends React.Component<{}, States> {
 	}
 
 	initDevice() {
-		if ('ontouchstart' in window || 'onmsgesturechange' in window)
+		if ('ontouchstart' in window || 'onmsgesturechange' in window)
 			this.setState({ currentDevice: 'Mobile' });
 		else
 			this.setState({ currentDevice: 'Desktop' });
 	}
 
-	initPreload() {
+	initLoading() {
 		let images = document.images;
 		let index = 0;
-		const preload = () => {
+		const load = () => {
 			const image = new Image();
 			image.src = images[index].src;
 			image.onload = () => {
 				index++;
 				if (index === images.length)
-					this.setState({ isLoading: false, percentage: 100 });
+					this.setState({ isLoading: false, percentage: 100 });
 				else {
 					this.setState({ percentage: Math.floor(index/images.length*100) });
-					setTimeout(preload, 5);
+					setTimeout(load, 5);
 				}
 			}
 		}
-		preload();
+		load();
 	}
 
 	clickEnter() {
@@ -90,17 +92,17 @@ class Main extends React.Component<{}, States> {
 	clickRight() {
 		if (this.state.currentPage === 'Portfolio')
 			this.setState({ currentPage: 'Information', isTransition: true });
-		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
+		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
 			this.setState({ currentPage: 'Portfolio', isTransition: true });
 		setTimeout(() => this.setState({ isTransition: false }), 500);
 	}
 
 	clickImprint() {
-		this.setState({ currentPage: 'Imprint', isTransition: true })
+		this.setState({ currentPage: 'Imprint', isTransition: true });
 	}
 
-	clickProject() {
-
+	clickProject(project: TypeProject) {
+		this.setState({ currentPage: 'Showroom', isTransition: true, currentProject: project });
 	}
 
 	render() {
@@ -118,13 +120,31 @@ class Main extends React.Component<{}, States> {
 					this.state.currentPage === 'Welcome' ? 'welcome' : ''
 				].filter(x => x).join(' ')}
 			>
-				<Welcome currentDevice={this.state.currentDevice} clickEnter={() => this.clickEnter()} isLoading={this.state.isLoading} percentage={this.state.percentage}/>
+				<Welcome
+					clickEnter={() => this.clickEnter()}
+					currentDevice={this.state.currentDevice}
+					isLoading={this.state.isLoading}
+					percentage={this.state.percentage}
+				/>
 				<>
-					<Header currentPage={this.state.currentPage} clickLeft={() => this.clickLeft()} clickRight={() => this.clickRight()}/>
+					<Header
+						clickLeft={() => this.clickLeft()}
+						clickRight={() => this.clickRight()}
+						currentPage={this.state.currentPage}
+					/>
 					<Imprint currentDevice={this.state.currentDevice}/>
 					<Information currentDevice={this.state.currentDevice}/>
-					<Showroom currentDevice={this.state.currentDevice}/>
-					<Portfolio currentDevice={this.state.currentDevice} currentPage={this.state.currentPage} projects={this.state.projects} clickImprint={() => this.clickImprint()}/>
+					<Showroom 
+						currentDevice={this.state.currentDevice}
+						currentProject={this.state.currentProject}
+					/>
+					<Portfolio
+						clickImprint={() => this.clickImprint()}
+						clickProject={(project: TypeProject) => this.clickProject(project)}
+						currentDevice={this.state.currentDevice}
+						currentPage={this.state.currentPage}
+						projects={this.state.projects}
+					/>
 				</>
 			</div>
 		);

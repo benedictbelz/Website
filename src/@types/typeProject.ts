@@ -1,4 +1,4 @@
-export type TypeProject = {
+export type TypeProject = {
     title: string;
     type: TypeProjectSelection;
     image: string;
@@ -6,8 +6,8 @@ export type TypeProject = {
     vimeo?: string;
     youtube?: string;
     www?: string;
-    icon: 'Black' | 'White';
+    icon: 'Black' | 'White';
     border: boolean;
 }
 
-export type TypeProjectSelection = 'All' | 'Digital' | 'Film' | 'Art';
+export type TypeProjectSelection = 'All' | 'Digital' | 'Film' | 'Art';

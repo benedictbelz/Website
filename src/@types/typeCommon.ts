@@ -1,17 +1,15 @@
-export type Browser =
+export type TypeBrowser =
 	| 'Chrome'
 	| 'Firefox'
 	| 'Microsoft'
 	| 'Opera'
-	| 'Safari'
-	| null;
+	| 'Safari';
 
-export type Device = 
+export type TypeDevice = 
     | 'Desktop'
-    | 'Mobile'
-    | null;
+    | 'Mobile';
 
-export type Page =
+export type TypePage =
 	| 'Imprint'
 	| 'Information'
 	| 'Portfolio'

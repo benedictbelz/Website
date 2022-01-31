@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { Device } from '../../@types/typeCommon';
+import { TypeDevice } from '../../@types/typeCommon';
 import './Scrollbar.scss';
 
 interface Props {
     color: 'black' | 'white';
-    currentDevice: Device;
+    currentDevice: TypeDevice | null;
     element: string;
 }
 
-interface States {
-    element: HTMLElement | null;
+interface States {
+    element: HTMLElement | null;
     scroll: number;
 }
 

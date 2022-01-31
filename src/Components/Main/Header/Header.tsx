@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Page } from '../../../@types/typeCommon';
+import { TypePage } from '../../../@types/typeCommon';
 import './Header.scss';
 
 interface Props {
-    currentPage: Page;
     clickLeft: Function;
     clickRight: Function;
+    currentPage: TypePage;
 }
 
-interface States {
+interface States {
     isClickedLeft: boolean;
     isClickedRight: boolean;
 }

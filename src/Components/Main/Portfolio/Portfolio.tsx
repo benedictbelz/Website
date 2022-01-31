@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { Project } from './Project/Project';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
-import { Device, Page } from '../../../@types/typeCommon';
+import { TypeDevice, TypePage } from '../../../@types/typeCommon';
 import { TypeProject, TypeProjectSelection } from '../../../@types/typeProject';
 import './Portfolio.scss';
 
 interface Props {
 	clickImprint: Function;
-	currentDevice: Device;
-	currentPage: Page;
+	clickProject: Function;
+	currentDevice: TypeDevice | null;
+	currentPage: TypePage;
 	projects: TypeProject[];
 }
 
@@ -16,6 +17,7 @@ interface States {
 	height: number;
 	scroll: number;
 	currentSelection: TypeProjectSelection;
+	isClicked: boolean;
 	selection: TypeProjectSelection[];
 }
 
@@ -25,6 +27,7 @@ export class Portfolio extends React.Component<Props, States> {
 		height: 0,
 		scroll: 0,
 		currentSelection: 'All',
+		isClicked: false,
 		selection: ['All', 'Digital', 'Film', 'Art'],
 	};
 
@@ -50,7 +53,7 @@ export class Portfolio extends React.Component<Props, States> {
 		}
 	}
 
-	fadeSelection() {
+	fadeSelection() {
 		// GET VARIABLES
 		let index = 0;
 		const selection = document.querySelectorAll('#selection li') as unknown as HTMLElement[];
@@ -123,9 +126,16 @@ export class Portfolio extends React.Component<Props, States> {
 							return (
 								<Project
 									key={project.title}
-									project={project}
+									clickProject={() => {
+										if (!this.state.isClicked) {
+											this.props.clickProject(project)
+											this.setState({ isClicked: true });
+											setTimeout(() => this.setState({ isClicked: false }), 500);
+										}
+									}}
 									currentDevice={this.props.currentDevice}
 									currentSelection={this.state.currentSelection}
+									project={project}
 								/>
 							);
 						})}

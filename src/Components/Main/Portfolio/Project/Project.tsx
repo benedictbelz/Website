@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Device } from '../../../../@types/typeCommon';
+import { TypeDevice } from '../../../../@types/typeCommon';
 import { TypeProject, TypeProjectSelection } from '../../../../@types/typeProject';
 import './Project.scss';
 
 interface Props {
-    currentDevice: Device;
+    clickProject: Function;
+    currentDevice: TypeDevice | null;
     currentSelection: TypeProjectSelection;
     project: TypeProject;
 }
@@ -13,12 +14,15 @@ export class Project extends React.Component<Props,{}> {
 
     render() {
         return (
-            <div className={[
-                'project',
-                this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : '',
-                this.props.project.icon === 'White' ? 'white' : '',
-                this.props.project.icon === 'Black' ? 'black' : ''
-            ].filter(x => x).join(' ')}>
+            <div 
+                className={[
+                    'project',
+                    this.props.project.type === this.props.currentSelection || this.props.currentSelection === 'All' ? 'show' : '',
+                    this.props.project.icon === 'White' ? 'white' : '',
+                    this.props.project.icon === 'Black' ? 'black' : ''
+                ].filter(x => x).join(' ')}
+                onClick={() => this.props.clickProject()}
+            >
                 <div className='wrapper'>
                     <div className='label'>
                         {this.props.project.type === 'Art' && <img src='assets/interface/art.svg' draggable='false'/>}

@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Loader } from '../../Loader/Loader';
 import { Logo } from './Logo/Logo';
-import { Device } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeCommon';
 import './Welcome.scss';
 
 interface Props {
-    currentDevice: Device;
     clickEnter: Function;
+    currentDevice: TypeDevice | null;
     isLoading: boolean;
     percentage: number;
 }
 
-interface States {
+interface States {
 	isVisible: boolean;
 }
 
@@ -21,9 +21,9 @@ export class Welcome extends React.Component<Props, States> {
         isVisible: false
     }
 
-    componentDidUpdate(prevProps: any) {
+    componentDidUpdate(prevProps: any) {
         if (!this.props.isLoading && prevProps.isLoading)
-            setTimeout(() => this.setState({ isVisible: true }), 750);
+            setTimeout(() => this.setState({ isVisible: true }), 1000);
     }
 
 	render() {

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
-import { Device } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeCommon';
 import './Imprint.scss';
 
 interface Props {
-    currentDevice: Device;
+    currentDevice: TypeDevice | null;
 }
 
 export class Imprint extends React.Component<Props,{}> {
