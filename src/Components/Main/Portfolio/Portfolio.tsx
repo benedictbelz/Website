@@ -14,8 +14,6 @@ interface Props {
 }
 
 interface States {
-	height: number;
-	scroll: number;
 	currentSelection: TypeProjectSelection;
 	isClicked: boolean;
 	selection: TypeProjectSelection[];
@@ -24,8 +22,6 @@ interface States {
 export class Portfolio extends React.Component<Props, States> {
 
 	state: States = {
-		height: 0,
-		scroll: 0,
 		currentSelection: 'All',
 		isClicked: false,
 		selection: ['All', 'Digital', 'Film', 'Art'],
@@ -57,7 +53,7 @@ export class Portfolio extends React.Component<Props, States> {
 		// GET VARIABLES
 		let index = 0;
 		const selection = document.querySelectorAll('#selection li') as unknown as HTMLElement[];
-		//
+		// RESET FADE
 		selection.forEach(item => item.classList.add('opacity'));
 		// RECURSIVE FUNCTION
 		function fade() {
@@ -83,6 +79,7 @@ export class Portfolio extends React.Component<Props, States> {
 		projects.forEach(project => {
 			project.classList.add('opacity');
 			project.classList.remove('fade');
+			project.style.animationPlayState = 'paused';
 		});
 		// RECURSIVE FUNCTION
 		function fade() {
@@ -90,7 +87,6 @@ export class Portfolio extends React.Component<Props, States> {
 			project.classList.remove('opacity');
 			project.offsetWidth;
 			project.classList.add('fade');
-			project.style.animationPlayState = 'paused';
 			project.style.animationPlayState = 'running';
 			index++;
 			if (index < show.length) timeout.push(setTimeout(() => fade(), 100));
@@ -117,6 +113,7 @@ export class Portfolio extends React.Component<Props, States> {
 									}}
 								>
 									<img src={'assets/interface/' + selection.toLowerCase() + '.svg'} draggable='false'/>
+									<p>{selection}</p>
 								</li>
 							);
 						})}

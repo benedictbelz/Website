@@ -18,8 +18,9 @@ export class Loader extends React.Component<Props, States> {
     }
 
     componentDidUpdate(prevProps: any) {
-        if (!this.props.isLoading && prevProps.isLoading)
+        if (!this.props.isLoading && prevProps.isLoading) {
             setTimeout(() => this.setState({ isVisible: false }), 500);
+        }
     }
 
 	render() {

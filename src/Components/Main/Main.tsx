@@ -17,10 +17,9 @@ interface States {
 	currentDevice: TypeDevice | null;
 	currentPage: TypePage;
 	currentProject: TypeProject | null;
-	isLoading: boolean;
 	isTransition: boolean;
-	percentage: number;
 	projects: TypeProject[];
+	showWelcome: boolean;
 }
 class Main extends React.Component<{}, States> {
 
@@ -29,16 +28,14 @@ class Main extends React.Component<{}, States> {
 		currentDevice: null,
 		currentPage: 'Welcome',
 		currentProject: null,
-		isLoading: true,
 		isTransition: false,
-		percentage: 0,
 		projects: getProjects(),
+		showWelcome: true,
 	}
 
 	componentDidMount() {
 		this.initBrowser();
 		this.initDevice();
-		this.initLoading();
 	}
 
 	initBrowser() {
@@ -61,28 +58,9 @@ class Main extends React.Component<{}, States> {
 			this.setState({ currentDevice: 'Desktop' });
 	}
 
-	initLoading() {
-		let images = document.images;
-		let index = 0;
-		const load = () => {
-			const image = new Image();
-			image.src = images[index].src;
-			image.onload = () => {
-				index++;
-				if (index === images.length)
-					this.setState({ isLoading: false, percentage: 100 });
-				else {
-					this.setState({ percentage: Math.floor(index/images.length*100) });
-					setTimeout(load, 5);
-				}
-			}
-		}
-		load();
-	}
-
 	clickEnter() {
 		this.setState({ currentPage: 'Portfolio', isTransition: true });
-		setTimeout(() => this.setState({ isTransition: false }), 500);
+		setTimeout(() => this.setState({ isTransition: false, showWelcome: false }), 1000);
 	}
 
 	clickLeft() {
@@ -94,7 +72,7 @@ class Main extends React.Component<{}, States> {
 			this.setState({ currentPage: 'Information', isTransition: true });
 		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
 			this.setState({ currentPage: 'Portfolio', isTransition: true });
-		setTimeout(() => this.setState({ isTransition: false }), 500);
+		setTimeout(() => this.setState({ isTransition: false }), 1000);
 	}
 
 	clickImprint() {
@@ -110,7 +88,6 @@ class Main extends React.Component<{}, States> {
 			<div 
 				id='main'
 				className={[
-					this.state.isLoading ? 'loading' : '',
 					this.state.isTransition ? 'transition' : '',
 					this.state.currentDevice === 'Desktop' ? 'desktop' : 'mobile',
 					this.state.currentPage === 'Imprint' ? 'imprint' : '',
@@ -120,32 +97,34 @@ class Main extends React.Component<{}, States> {
 					this.state.currentPage === 'Welcome' ? 'welcome' : ''
 				].filter(x => x).join(' ')}
 			>
-				<Welcome
-					clickEnter={() => this.clickEnter()}
-					currentDevice={this.state.currentDevice}
-					isLoading={this.state.isLoading}
-					percentage={this.state.percentage}
+				{this.state.showWelcome && 
+					<Welcome
+						clickEnter={() => this.clickEnter()}
+						currentDevice={this.state.currentDevice}
+					/>
+				}
+				<Header
+					clickLeft={() => this.clickLeft()}
+					clickRight={() => this.clickRight()}
+					currentPage={this.state.currentPage}
 				/>
-				<>
-					<Header
-						clickLeft={() => this.clickLeft()}
-						clickRight={() => this.clickRight()}
-						currentPage={this.state.currentPage}
-					/>
-					<Imprint currentDevice={this.state.currentDevice}/>
-					<Information currentDevice={this.state.currentDevice}/>
-					<Showroom 
-						currentDevice={this.state.currentDevice}
-						currentProject={this.state.currentProject}
-					/>
-					<Portfolio
-						clickImprint={() => this.clickImprint()}
-						clickProject={(project: TypeProject) => this.clickProject(project)}
-						currentDevice={this.state.currentDevice}
-						currentPage={this.state.currentPage}
-						projects={this.state.projects}
-					/>
-				</>
+				<Imprint 
+					currentDevice={this.state.currentDevice}
+				/>
+				<Information
+					currentDevice={this.state.currentDevice}
+				/>
+				<Showroom 
+					currentDevice={this.state.currentDevice}
+					currentProject={this.state.currentProject}
+				/>
+				<Portfolio
+					clickImprint={() => this.clickImprint()}
+					clickProject={(project: TypeProject) => this.clickProject(project)}
+					currentDevice={this.state.currentDevice}
+					currentPage={this.state.currentPage}
+					projects={this.state.projects}
+				/>
 			</div>
 		);
 	}

@@ -4,14 +4,14 @@
     cursor: pointer;
     display: none;
     box-sizing: border-box;
-    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-transparent;
+    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
     border-radius: $border-radius-l;
     
     .wrapper {
         position: relative;
         overflow: hidden;
         border-radius: $border-radius-l;
-        transition: transform $transition-high ease;
+        transition: transform $transition-s ease;
         transform: scale(1);
 
         .label {
@@ -23,8 +23,6 @@
             right: $spacing-m;
             height: $spacing-icon-s;
             width: $spacing-icon-s;
-            border-radius: $border-radius-s;
-            overflow: hidden;
 
             img {
                 width: 100%;
@@ -41,7 +39,7 @@
             width: 100%;
             border-radius: $border-radius-l;
             overflow: hidden;
-            transition: background-color $transition-high ease;
+            transition: background-color $transition-s ease;
             background-color: transparent;
     
             .title {
@@ -49,8 +47,8 @@
                 text-align: center;
                 color: $color-white;
                 font-weight: $font-weight-regular;
-                transition: opacity $transition-high ease,
-                            transform $transition-high ease;
+                transition: opacity $transition-s ease,
+                            transform $transition-s ease;
                 transform: scale(0.5);
                 opacity: 0;
             }
@@ -66,15 +64,15 @@
     
             a {
                 display: block;
-                height: $spacing-icon-s;
-                width: $spacing-icon-s;
+                height: $spacing-icon-m;
+                width: $spacing-icon-m;
                 opacity: 0;
-                transition: transform $transition-high ease;
+                transition: transform $transition-s ease;
                 transform: scale(0);
     
                 img {
                     width: 100%;
-                    transition: transform $transition-high ease;
+                    transition: transform $transition-s ease;
                     transform: scale(1);
                     filter: invert(1);
                 }
@@ -96,9 +94,6 @@
     
             img {
                 width: 100%;
-                transform: scale(1.01);
-                transition: filter $transition-high ease;
-                filter: blur(0px);
             }
         }
     }
@@ -117,7 +112,7 @@
 
     &.fade {
         animation-name: fade;
-        animation-duration: $transition-low;
+        animation-duration: $transition-l;
         animation-timing-function: ease-out;
         animation-fill-mode: backwards;
 
@@ -125,9 +120,6 @@
             0% {
                 transform: scale(0);
                 opacity: 0;
-            }
-            70% {
-                transform: scale(1.025);
             }
             100% {
                 transform: scale(1);
@@ -157,10 +149,6 @@
         .link a {
             opacity: 1;
             transform: scale(1);
-        }
-    
-        .image img {
-            filter: blur(3px);
         }
     }
 

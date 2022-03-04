@@ -6,7 +6,8 @@ import { gsap } from 'gsap';
 import './Logo.scss';
 
 interface Props {
-    isVisible: boolean;
+    isLoading: boolean;
+    isRendered: Function;
 }
 export class Logo extends React.Component<Props,{}> {
 
@@ -76,19 +77,20 @@ export class Logo extends React.Component<Props,{}> {
             renderer.render(scene, camera);
         }
         render();
+        this.props.isRendered();
 
         /******************************/
         /*         ANIMATION          */
         /******************************/
 
-        let wait = setInterval(() => {
-            if (this.props.isVisible)
-                startAnimation();
+        const interval = setInterval(() => {
+            if (this.props.isLoading) {
+                clearInterval(interval);
+                setTimeout(() => startAnimation(), 2000);
+            }
         }, 50);
 
         function startAnimation() {
-            // CLEAR INTERVAL
-            clearInterval(wait);
             // ANIMATE TIMELINE
             const timeline = gsap.timeline();
             timeline.to(group.rotation, { duration: 0, y: THREE.MathUtils.degToRad(30), ease: 'power2.easeOut' });

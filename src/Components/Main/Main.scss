@@ -24,7 +24,6 @@ body {
             overflow-y: auto;
             height: 100%;
             width: 100%;
-            transition: transform $transition-medium ease;
         }
 
         #imprint,
@@ -76,7 +75,7 @@ body {
 
         &.showroom {
             #portfolio,
-            .scrollbar.showroom {
+            .scrollbar.portfolio {
                 transform: translate(100%, 0%);
             }
 
@@ -103,7 +102,7 @@ body {
             #portfolio,
             #showroom,
             #welcome {
-                transition: transform $transition-medium ease;
+                transition: transform $transition-l ease;
             }
         }
     }

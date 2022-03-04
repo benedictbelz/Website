@@ -21,16 +21,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: $spacing-icon-m;
-        width: $spacing-icon-m;
+        height: $spacing-icon-l;
+        width: $spacing-icon-l;
 
         img {
             position: absolute;
             opacity: 0;
             width: 0%;
-            transition: opacity $transition-high ease,
-                        transform $transition-high ease,
-                        width $transition-high ease;
+            transition: opacity $transition-m ease,
+                        transform $transition-s ease,
+                        width $transition-m ease;
 
             &.show {
                 opacity: 1;

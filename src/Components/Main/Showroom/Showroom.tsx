@@ -30,12 +30,12 @@ export class Showroom extends React.Component<Props, States> {
             this.props.currentProject && (
             (this.props.currentProject && !prevProps.currentProject) || this.props.currentProject.title !== prevProps.currentProject.title) &&
 			!this.state.loadedProjects.includes(this.props.currentProject.title)
-        )
+        ) {
 			setTimeout(() => {
 				this.setState({ loadedProjects: [this.props.currentProject.title, ...this.state.loadedProjects] });
 				this.initLoading();
 			});
-        
+        }
     }
 
     initLoading() {
@@ -54,7 +54,9 @@ export class Showroom extends React.Component<Props, States> {
 				}
 			}
 		}
-		if (images.length !== 0) load();
+		if (images.length !== 0) {
+            load();
+        }
     }
 
 	render() {
@@ -62,7 +64,7 @@ export class Showroom extends React.Component<Props, States> {
             <Scrollbar color={'white'} currentDevice={this.props.currentDevice} element={'showroom'}>
                 <div id='showroom'>
                     <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
-                    {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' ? <ZdfAspekte/> : null}
+                    {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte/>}
                 </div>
             </Scrollbar>
         );

@@ -8,12 +8,10 @@
     background-color: $color-white;
 
     #logo {
-        height: $spacing-icon-l;
-        width: $spacing-icon-l;
+        height: $spacing-icon-xl;
+        width: $spacing-icon-xl;
         align-self: flex-end;
-        transition: opacity $transition-low ease,
-                    transform $transition-low ease;
-        opacity: 0;
+        transition: transform $transition-xl ease;
         transform: translateY(-10%);
 
         img {
@@ -31,41 +29,34 @@
         margin: $spacing-l 0;
         line-height: 1.25;
         letter-spacing: 0.25;
-        transition: opacity $transition-low ease,
-                    transform $transition-low ease;
-        opacity: 0;
+        transition: transform $transition-xl ease;
         transform: scale(0.75);
     }
 
     #enter {
         cursor: pointer;
         align-self: flex-start;
-        transition: opacity $transition-low ease,
-                    transform $transition-low ease;
-        opacity: 0;
+        transition: transform $transition-xl ease;
         transform: translateY(10%);
 
         img {
-            height: $spacing-icon-m;
-            width: $spacing-icon-m;
-            transition: transform $transition-medium ease;
+            height: $spacing-icon-l;
+            width: $spacing-icon-l;
+            transition: transform $transition-m ease;
             transform: scale(1);
         }
     }
 
     &.show {
         #logo {
-            opacity: 1;
             transform: translateY(0%);
         }
     
         #message {
-            opacity: 1;
             transform: scale(1);
         }
     
         #enter {
-            opacity: 1;
             transform: translateY(0%);
         }
     }

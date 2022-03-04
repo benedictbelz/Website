@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-    <rect width="512" height="512" fill="#FFFFFF" fill-opacity="0"/>
-    <rect width="250" height="200" rx="25" transform="translate(131 129)" fill="none" stroke="#141414" stroke-miterlimit="10" stroke-width="30"/>
-    <rect width="200" height="30" rx="10" transform="translate(156 363)" fill="#141414"/>
-    <rect width="60" height="54" transform="translate(226 329)" fill="#141414"/>
+    <rect width="512" height="512" fill="rgba(255,255,255,0)"/>
+    <g transform="translate(-129 119)">
+        <path d="M58.143-15H423.857C464.188-15,497,17.968,497,58.491v275.59c0,40.523-32.812,73.491-73.143,73.491H58.143C17.812,407.571-15,374.6-15,334.081V58.491C-15,17.968,17.812-15,58.143-15ZM423.857,352.453a18.35,18.35,0,0,0,18.286-18.373V58.491a18.35,18.35,0,0,0-18.286-18.373H58.143A18.35,18.35,0,0,0,39.857,58.491v275.59a18.35,18.35,0,0,0,18.286,18.373Z" transform="translate(144 -104)" fill="#141414"/>
+        <rect width="366" height="55" rx="10" transform="translate(202 338)" fill="#141414"/>
+        <rect width="110" height="99" transform="translate(330 276)" fill="#141414"/>
+    </g>
 </svg>

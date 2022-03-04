@@ -27,7 +27,7 @@ export class Header extends React.Component<Props, States> {
                     if (!this.state.isClickedLeft) {
                         this.setState({ isClickedLeft: true });
                         this.props.clickLeft();
-                        setTimeout(() => this.setState({ isClickedLeft: false }), 500);
+                        setTimeout(() => this.setState({ isClickedLeft: false }), 1000);
                     }
                 }}>        
                     <img id='logo_back' className={'show'} src='assets/interface/logo_back.png' draggable='false' />
@@ -38,10 +38,9 @@ export class Header extends React.Component<Props, States> {
                     if (!this.state.isClickedRight) {
                         this.setState({ isClickedRight: true });
                         this.props.clickRight();
-                        setTimeout(() => this.setState({ isClickedRight: false }), 500);
+                        setTimeout(() => this.setState({ isClickedRight: false }), 1000);
                     }
                 }}>
-                    
                     <img id='information_back' className={this.props.currentPage === 'Portfolio' || this.props.currentPage === 'Welcome' ? 'show' : ''} src='assets/interface/information_back.png' draggable='false' />
                     <img id='information_front' className={this.props.currentPage === 'Portfolio' || this.props.currentPage === 'Welcome' ? 'show' : ''} src='assets/interface/information_front.png' draggable='false' />
                     <img id='arrow_left' className={this.props.currentPage === 'Imprint' || this.props.currentPage === 'Information' ? 'show' : ''} src='assets/interface/arrow_left.png' draggable='false' />

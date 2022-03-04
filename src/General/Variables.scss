@@ -4,8 +4,11 @@
 
 $color-white: #FFFFFF;
 $color-white-transparent: #FFFFFF80;
+$color-white-shadow: #FFFFFF40;
+
 $color-black: #141414;
 $color-black-transparent: #14141480;
+$color-black-shadow: #14141440;
 
 /******************************/
 /********** FONT-SIZE *********/
@@ -34,9 +37,10 @@ $spacing-xs: 5px;
 $spacing-s: 10px;
 $spacing-m: 25px;
 $spacing-l: 50px;
-$spacing-icon-s: 35px;
-$spacing-icon-m: 75px;
-$spacing-icon-l: 100px;
+$spacing-icon-s: 20px;
+$spacing-icon-m: 40px;
+$spacing-icon-l: 75px;
+$spacing-icon-xl: 100px;
 $spacing-button: 45px;
 $spacing-header: 150px;
 $spacing-picture: 250px;
@@ -56,7 +60,7 @@ $border-radius-l: 20px;
 /************ MEDIA ***********/
 /******************************/
 
-$media-xs: 500px;
+$media-xs: 400px;
 $media-s: 600px;
 $media-m: 900px;
 $media-l: 1200px;
@@ -66,9 +70,10 @@ $media-xl: 2000px;
 /********* TRANSITION *********/
 /******************************/
 
-$transition-high: 0.25s;
-$transition-medium: 0.5s;
-$transition-low: 1s;
+$transition-s: 0.25s;
+$transition-m: 0.5s;
+$transition-l: 1s;
+$transition-xl: 2s;
 
 /******************************/
 /******** BORDER WIDTH ********/
@@ -81,5 +86,5 @@ $border-underline: 1.5px;
 /********* BOX-SHADOW *********/
 /******************************/
 
-$box-shadow-blur: 20px;
-$box-shadow-spread: -10px;
+$box-shadow-blur: 10px;
+$box-shadow-spread: 0px;

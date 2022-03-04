@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity $transition-medium ease;
+    transition: opacity $transition-m ease;
     opacity: 0;
 
     #circle {
@@ -19,7 +19,7 @@
         width: $spacing-loader;
         border-radius: 50%;
         animation-name: circle;
-        animation-duration: $transition-low;
+        animation-duration: $transition-l;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
 

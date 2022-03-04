@@ -7,8 +7,8 @@
     .wrapper {
         box-sizing: border-box;
         margin: 0 auto;
-        transition: padding $transition-high ease,
-                    width $transition-high ease;
+        transition: padding $transition-s ease,
+                    width $transition-s ease;
         padding-top: $spacing-header;
         padding-bottom: $spacing-l;
         width: $spacing-wrapper;
@@ -18,8 +18,8 @@
             margin: 0 auto;
             margin-bottom: $spacing-l;
             width: $spacing-picture;
-            transition: padding $transition-medium ease,
-                        width $transition-medium ease;
+            transition: padding $transition-m ease,
+                        width $transition-m ease;
     
             img {
                 border-radius: 50%;
@@ -38,7 +38,7 @@
 
             img {
                 margin-right: $spacing-s * 2;
-                width: $spacing-icon-s / 1.5;
+                width: $spacing-icon-s * 1.25;
             }
 
             &:first-of-type {
@@ -57,9 +57,9 @@
 
             a {
                 display: inline-block;
-                height: $spacing-icon-s * 1.25;
-                width: $spacing-icon-s * 1.25;
-                transition: transform $transition-high ease;
+                height: $spacing-icon-m;
+                width: $spacing-icon-m;
+                transition: transform $transition-s ease;
                 transform: scale(1);
 
                 img {
