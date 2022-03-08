@@ -8,7 +8,6 @@ interface Props {
 }
 
 export class Imprint extends React.Component<Props,{}> {
-
 	render() {
 		return (
             <Scrollbar color={'white'} currentDevice={this.props.currentDevice} element={'imprint'}>

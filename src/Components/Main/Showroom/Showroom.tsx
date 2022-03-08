@@ -64,7 +64,7 @@ export class Showroom extends React.Component<Props, States> {
             <Scrollbar color={'white'} currentDevice={this.props.currentDevice} element={'showroom'}>
                 <div id='showroom'>
                     <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
-                    {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte/>}
+                    {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte currentDevice={this.props.currentDevice}/>}
                 </div>
             </Scrollbar>
         );

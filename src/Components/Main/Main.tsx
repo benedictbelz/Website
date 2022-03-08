@@ -39,23 +39,29 @@ class Main extends React.Component<{}, States> {
 	}
 
 	initBrowser() {
-		if (navigator.userAgent.indexOf('Chrome') > -1)
+		if (navigator.userAgent.indexOf('Chrome') > -1) {
 			this.setState({ currentBrowser: 'Chrome' });
-		if (navigator.userAgent.indexOf('Firefox') > -1)
+		}
+		if (navigator.userAgent.indexOf('Firefox') > -1) {
 			this.setState({ currentBrowser: 'Firefox' });
-		if (navigator.userAgent.indexOf('MSIE') > -1)
+		}
+		if (navigator.userAgent.indexOf('MSIE') > -1) {
 			this.setState({ currentBrowser: 'Microsoft' });
-		if (navigator.userAgent.toLowerCase().indexOf('op') > -1)
+		}
+		if (navigator.userAgent.toLowerCase().indexOf('op') > -1) {
 			this.setState({ currentBrowser: 'Opera' });
-		if (navigator.userAgent.indexOf('Safari') > -1)
+		}
+		if (navigator.userAgent.indexOf('Safari') > -1) {
 			this.setState({ currentBrowser: 'Safari' });
+		}
 	}
 
 	initDevice() {
-		if ('ontouchstart' in window || 'onmsgesturechange' in window)
+		if ('ontouchstart' in window || 'onmsgesturechange' in window) {
 			this.setState({ currentDevice: 'Mobile' });
-		else
+		} else {
 			this.setState({ currentDevice: 'Desktop' });
+		}
 	}
 
 	clickEnter() {
@@ -68,10 +74,12 @@ class Main extends React.Component<{}, States> {
 	}
 
 	clickRight() {
-		if (this.state.currentPage === 'Portfolio')
+		if (this.state.currentPage === 'Portfolio') {
 			this.setState({ currentPage: 'Information', isTransition: true });
-		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom')
+		}
+		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom') {
 			this.setState({ currentPage: 'Portfolio', isTransition: true });
+		}
 		setTimeout(() => this.setState({ isTransition: false }), 1000);
 	}
 

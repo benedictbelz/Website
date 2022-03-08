@@ -38,8 +38,7 @@ export class Welcome extends React.Component<Props, States> {
 				if (index !== images.length) {
                     this.setState({ percentage: Math.floor(index/images.length*100) });
 					setTimeout(load, 5);
-                }
-				else if (this.props.currentDevice === 'Desktop' && !this.state.isRendered) {
+                } else if (this.props.currentDevice === 'Desktop' && !this.state.isRendered) {
                     const interval = setInterval(() => {
                         if (!this.state.isRendered) {
                             clearInterval(interval);
@@ -72,7 +71,7 @@ export class Welcome extends React.Component<Props, States> {
                     my creative work.
                 </div>
                 <div id='enter' onClick={() => this.props.clickEnter()}>
-                    <img src='assets/interface/arrow_down.png' draggable='false' />
+                    <img src='assets/interface/arrowDown.png' draggable='false' />
                 </div>
             </div>
         );

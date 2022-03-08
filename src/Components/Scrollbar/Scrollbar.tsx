@@ -34,10 +34,12 @@ export class Scrollbar extends React.Component<Props, States> {
         let scroll = this.state.element.scrollTop;
         let percentage = Math.floor(scroll/height*1000)/1000;
         // BOUNDARY
-        if (percentage <= 0 || isNaN(percentage))
+        if (percentage <= 0 || isNaN(percentage)) {
             percentage = 0;
-        if (percentage >= 1 && height !== 0)
+        }
+        if (percentage >= 1 && height !== 0) {
             percentage = 1;
+        }
         // UPDATE SCROLL
         this.setState({ scroll: percentage });
     }

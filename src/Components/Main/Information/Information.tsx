@@ -14,10 +14,11 @@ export class Information extends React.Component<Props,{}> {
         const birth = new Date('1991-04-09');
         const year = today.getFullYear() - birth.getFullYear();
         const month = today.getMonth() - birth.getMonth();
-        if (month < 0 || (month === 0 && today.getDate() < birth.getDate()))
+        if (month < 0 || (month === 0 && today.getDate() < birth.getDate())) {
             return year-1;
-        else
+        } else {
             return year;
+        }
     }
 
 	render() {
@@ -37,11 +38,11 @@ export class Information extends React.Component<Props,{}> {
                         </div>
                         <div id='contact'>
                             <div id='phone'>
-                                <img src='assets/interface/phone.png' draggable='false' />
+                                <img src='assets/interface/phone.svg' draggable='false' />
                                 <a className='underline white' href='tel:+491633938055'>+49 163 3938055</a>
                             </div>
                             <div id='email'>
-                                <img src='assets/interface/email.png' draggable='false' />
+                                <img src='assets/interface/email.svg' draggable='false' />
                                 <a className='underline white' href='mailto:info@benedictbelz.eu'>info@benedictbelz.eu</a> 
                             </div>
                         </div>
