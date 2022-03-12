@@ -70,7 +70,7 @@ class Main extends React.Component<{}, States> {
 	}
 
 	clickLeft() {
-		console.log('CLICK LEFT', this.state.currentProject);
+
 	}
 
 	clickRight() {

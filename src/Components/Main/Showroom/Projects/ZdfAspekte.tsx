@@ -10,13 +10,6 @@ interface States {
     
 }
 export class ZdfAspekte extends React.Component<Props, States> {
-
-    constructor(props: any) {
-        super(props);
-
-        console.log('INIT ZDF ASPEKTE');
-    }
-
     render() {
         return (
             <div className='wrapper'>
