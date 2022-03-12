@@ -39,6 +39,9 @@ export class Showroom extends React.Component<Props, States> {
     }
 
     initLoading() {
+
+        console.log('INIT LOADING');
+
         let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
 		let index = 0;
 		const load = () => {

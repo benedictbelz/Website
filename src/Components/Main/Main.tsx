@@ -70,15 +70,19 @@ class Main extends React.Component<{}, States> {
 	}
 
 	clickLeft() {
-
+		console.log('CLICK LEFT', this.state.currentProject);
 	}
 
 	clickRight() {
 		if (this.state.currentPage === 'Portfolio') {
 			this.setState({ currentPage: 'Information', isTransition: true });
 		}
-		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information' || this.state.currentPage === 'Showroom') {
+		if (this.state.currentPage === 'Imprint' || this.state.currentPage === 'Information') {
 			this.setState({ currentPage: 'Portfolio', isTransition: true });
+		}
+		if (this.state.currentPage === 'Showroom') {
+			this.setState({ currentPage: 'Portfolio', isTransition: true });
+			setTimeout(() => this.setState({ currentProject: null }), 1000);
 		}
 		setTimeout(() => this.setState({ isTransition: false }), 1000);
 	}

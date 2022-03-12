@@ -21,6 +21,8 @@ interface States {
 
 export class Portfolio extends React.Component<Props, States> {
 
+	private timeout: any = [];
+
 	state: States = {
 		currentSelection: 'All',
 		isClicked: false,
@@ -49,50 +51,48 @@ export class Portfolio extends React.Component<Props, States> {
 		}
 	}
 
-	fadeSelection() {
+	async fadeSelection() {
 		// GET VARIABLES
-		let index = 0;
 		const selection = document.querySelectorAll('#selection li') as unknown as HTMLElement[];
-		// RESET FADE
+		// ADD OPACITY
 		selection.forEach(item => item.classList.add('opacity'));
-		// RECURSIVE FUNCTION
-		function fade() {
-			const item = selection[index];
-			item.classList.remove('opacity');
-			item.classList.add('fade');
-			index++;
-			if (index < selection.length) setTimeout(() => fade(), 100);
+		// GO THROUGH SELECTION
+		for (let index = 0; index < selection.length; index++) {
+			selection[index].classList.remove('opacity');
+			selection[index].classList.add('fade');
+			await new Promise(resolve => setTimeout(resolve, 100));
 		}
-		// CALL FUNCTION
-		fade()
 	}
 
 	fadeProjects() {
-		// GET VARIABLES
-		let timeout: any = [];
+		// DEFINE INDEX
 		let index = 0;
+		// GET VARIABLES
 		const projects = document.querySelectorAll('.project') as unknown as HTMLElement[];
 		const show = document.querySelectorAll('.project.show') as unknown as HTMLElement[];
 		// RESET TIMEOUT
-		timeout.forEach((t: any) => clearTimeout(t));
-		// RESET FADE
+		this.timeout.forEach((timeout: any) => clearTimeout(timeout));
+		// RESET PROJECTS
 		projects.forEach(project => {
 			project.classList.add('opacity');
 			project.classList.remove('fade');
-			project.style.animationPlayState = 'paused';
 		});
 		// RECURSIVE FUNCTION
-		function fade() {
-			const project = show[index];
-			project.classList.remove('opacity');
-			project.offsetWidth;
-			project.classList.add('fade');
-			project.style.animationPlayState = 'running';
+		let fade = () => {
+			show[index].classList.remove('opacity');
+			show[index].offsetWidth;
+			show[index].classList.add('fade');
+			show[index].style.animationPlayState = 'paused';
+			show[index].style.animationPlayState = 'running';
 			index++;
-			if (index < show.length) timeout.push(setTimeout(() => fade(), 100));
+			if (index < show.length) {
+				this.timeout.push(setTimeout(() => fade(), 100));
+			}
 		}
-		// CALL FUNCTION
-		if (show.length !== 0) fade();
+		// START FADE
+		if (show.length !== 0) {
+			fade()
+		}
 	}
 
 	render() {
