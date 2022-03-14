@@ -17,9 +17,9 @@ export class Imprint extends React.Component<Props,{}> {
                             Information according to<br/>
                             §5 TMG and §55 RStV
                         </h1>
-                        <p id="address"></p>
+                        <p id='address'></p>
                         <h2>Contact</h2>
-                        <p id="data"></p>
+                        <p id='data'></p>
                         <h2>Content</h2>
                         <p>
                             The content of my page has been created with the utmost care. However, I cannot guarantee the contents accuracy, completeness or topicality. According to statutory provisions, I am furthermore responsible for my own content on this web page. In this matter, please note that I am not obliged to monitor the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. My obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act.

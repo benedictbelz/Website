@@ -20,13 +20,13 @@ export function getProjects(): TypeProject[] {
         {
             title: 'AdmiralCloud',
             type: 'Digital',
-            image: 'assets/projects/admiralcloud/preview.jpg',
+            image: 'assets/projects/admiralCloud/preview.jpg',
             www: 'https://www.admiralcloud.com',
             icon: 'White',
             border: false
         },
         {
-            title: 'MMPRO',
+            title: 'MMPro',
             type: 'Digital',
             image: 'assets/projects/mmpro/preview.jpg',
             www: 'https://www.mmpro.de',
@@ -44,7 +44,7 @@ export function getProjects(): TypeProject[] {
         {  
             title: 'Art Attech',
             type: 'Film',
-            image: 'assets/projects/artattech/preview.jpg',
+            image: 'assets/projects/artAttech/preview.jpg',
             icon: 'White',
             border: false
         },

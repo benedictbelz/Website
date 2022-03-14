@@ -10,7 +10,6 @@ interface States {
     current: number | null;
     bullets: HTMLElement[] | null;
     images: HTMLElement[] | null;
-    isInitialized: boolean;
     isTransition: boolean;
     number: number | null;
 }
@@ -24,7 +23,6 @@ export class Slider extends React.Component<Props, States> {
             current: null,
             bullets: null,
             images: null,
-            isInitialized: false,
             isTransition: false,
             number: null
         }
@@ -38,7 +36,6 @@ export class Slider extends React.Component<Props, States> {
             current: 0,
             bullets: document.querySelector('.slider .bullets').children as unknown as HTMLElement[],
             images: document.querySelector('.slider .images').children as unknown as HTMLElement[],
-            isInitialized: true,
             number: React.Children.toArray(this.props.children).length
         });
         // SET BULLETS & IMAGES
@@ -126,10 +123,14 @@ export class Slider extends React.Component<Props, States> {
     setBullets() {
         // DELETE CLASS NAME FOR ALL BULLETS
         for (let index = 0; index < this.state.number; index++) {
-            this.state.bullets[index].className = '';
+            if (index >= Math.floor(this.state.current/10)*10 && index < (Math.floor(this.state.current/10)*10)+10) {
+                this.state.bullets[index].className = 'show';
+            } else {
+                this.state.bullets[index].className = '';
+            }
         }
         // SET BULLETS
-        this.state.bullets[this.state.current].className = 'current';
+        this.state.bullets[this.state.current].classList.add('current');
     }
 
     setImages() {
@@ -231,7 +232,7 @@ export class Slider extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <div className={['slider', this.state.isTransition ? 'transition' : ''].filter(x => x).join(' ')}>
+            <div className={['category', 'slider', this.state.isTransition ? 'transition' : ''].filter(x => x).join(' ')}>
                 <div className='drag'/>
                 <div className='click'>
                     <div className='left'>

@@ -47,16 +47,16 @@ export class Logo extends React.Component<Props,{}> {
         const mtlLoader = new MTLLoader();
         mtlLoader.setPath('/assets/logo/');
         // LOAD OBJECT
-        mtlLoader.load('logo_front.mtl', material => {
+        mtlLoader.load('logoFront.mtl', material => {
             material.preload();
             objLoader.setMaterials(material);
-            objLoader.load('logo_front.obj', object => logoFront.add(object));
+            objLoader.load('logoFront.obj', object => logoFront.add(object));
         })
         // LOAD OBJECT
-        mtlLoader.load('logo_back.mtl', material => {
+        mtlLoader.load('logoBack.mtl', material => {
             material.preload();
             objLoader.setMaterials(material);
-            objLoader.load('logo_back.obj', object => logoBack.add(object));
+            objLoader.load('logoBack.obj', object => logoBack.add(object));
         })
 
         /******************************/
@@ -86,7 +86,7 @@ export class Logo extends React.Component<Props,{}> {
         const interval = setInterval(() => {
             if (this.props.isLoading) {
                 clearInterval(interval);
-                setTimeout(() => startAnimation(), 2000);
+                setTimeout(() => startAnimation(), 500);
             }
         }, 50);
 

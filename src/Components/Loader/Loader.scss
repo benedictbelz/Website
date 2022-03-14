@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity $transition-m ease;
     opacity: 0;
 
     #circle {
@@ -35,6 +34,10 @@
 
     &.show {
         opacity: 1;
+    }
+
+    &.transition {
+        transition: opacity $transition-m ease;
     }
 
     &.black {

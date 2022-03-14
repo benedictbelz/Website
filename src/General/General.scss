@@ -27,11 +27,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-#root {
-    height: 100%;
-    width: 100%;
-}
-
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -54,6 +49,11 @@ ul {
 a {
     color: $color-white;
     text-decoration: none;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
 }
 
 .uppercase {

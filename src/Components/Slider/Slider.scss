@@ -10,13 +10,13 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        z-index: 500;
+        z-index: 200;
     }
 
     .click {
         pointer-events: none;
         position: absolute;
-        z-index: 1000;
+        z-index: 300;
         height: 100%;
         width: 100%;
 
@@ -60,11 +60,12 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        z-index: 200;
+        z-index: 100;
         width: 100%;
         bottom: $spacing-m;
 
         div {
+            display: none;
             border-radius: 50%;
             height: $spacing-bullet;
             width: $spacing-bullet;
@@ -77,6 +78,10 @@
 
             &.current {
                 background-color: $color-white;
+            }
+
+            &.show {
+                display: block;
             }
         }
     }

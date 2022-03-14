@@ -8,18 +8,23 @@ interface Props {
 }
 
 interface States {
+    isTransition: boolean;
     isVisible: boolean;
 }
 
 export class Loader extends React.Component<Props, States> {
 
     state: States = {
+        isTransition: true,
         isVisible: true
     }
 
     componentDidUpdate(prevProps: any) {
         if (!this.props.isLoading && prevProps.isLoading) {
-            setTimeout(() => this.setState({ isVisible: false }), 500);
+            setTimeout(() => this.setState({ isTransition: true, isVisible: false }), 500);
+        }
+        if (this.props.isLoading && !prevProps.isLoading) {
+            this.setState({ isTransition: false, isVisible: true });
         }
     }
 
@@ -28,11 +33,12 @@ export class Loader extends React.Component<Props, States> {
             <div className={[
                     'loader',
                     this.props.color === 'Black' ? 'black' : 'white',
+                    this.state.isTransition ? 'transition' : '',
                     this.state.isVisible ? 'show' : ''
                 ].filter(x => x).join(' ')}
             >
-                <div id="circle"></div>
-                <div id="percentage">{this.props.percentage}%</div>
+                <div id='circle'></div>
+                <div id='percentage'>{this.props.percentage}%</div>
             </div>
         );
 	}

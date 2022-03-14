@@ -42,13 +42,11 @@ export class Welcome extends React.Component<Props, States> {
                     const interval = setInterval(() => {
                         if (!this.state.isRendered) {
                             clearInterval(interval);
-                            this.setState({ percentage: 100 });
-                            setTimeout(() => this.setState({ isLoading: false }), 1000);
+                            this.setState({ isLoading: false, percentage: 100 });
                         }
                     }, 50); 
 				} else {
-                    this.setState({ percentage: 100 });
-                    setTimeout(() => this.setState({ isLoading: false }), 1000);
+                    this.setState({ isLoading: false, percentage: 100 });
                 }
 			}
 		}
