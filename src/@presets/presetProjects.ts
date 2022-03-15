@@ -66,7 +66,7 @@ export function getProjects(): TypeProject[] {
             title: 'Personal Website',
             type: 'Digital',
             image: 'assets/projects/personalWebsite/preview.jpg',
-            github: 'https://github.com/benedictbelz/Webseite',
+            github: 'https://github.com/benedictbelz/Website',
             icon: 'Black'
         },
         {
