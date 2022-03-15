@@ -22,10 +22,17 @@ export class MMPro extends React.Component<{}, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>Anabell Jung</p>
                         <p>Daniel Züwerink</p>
                         <p>Eike Janowski</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>CSS</p>
+                        <p>HTML</p>
+                        <p>JavaScript</p>
+                        <p>WordPress</p>
                     </div>
                 </div>
                 <div className='category image square'>

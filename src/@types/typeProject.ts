@@ -7,7 +7,6 @@ export type TypeProject = {
     youtube?: string;
     www?: string;
     icon: 'Black' | 'White';
-    border: boolean;
 }
 
 export type TypeProjectSelection = 'All' | 'Digital' | 'Film' | 'Art';

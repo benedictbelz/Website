@@ -26,8 +26,14 @@ export class ArtAttech extends React.Component<Props, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>Karsan Ameen</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>Adobe After Effects</p>
+                        <p>Adobe Premiere</p>
+                        <p>Cinema 4D</p>
                     </div>
                 </div>
                 <Slider currentDevice={this.props.currentDevice}>

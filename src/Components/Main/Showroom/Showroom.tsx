@@ -10,6 +10,7 @@ import { Lockdown } from './Projects/Lockdown';
 import { Metropolis } from './Projects/Metropolis';
 import { MMPro } from './Projects/MMPro';
 import { Nanotec } from './Projects/Nanotec';
+import { Phobius } from './Projects/Phobius';
 import { PersonalWebsite } from './Projects/PersonalWebsite';
 import { ShimmeringNightmare } from './Projects/ShimmeringNightmare';
 import { Showreel } from './Projects/Showreel';
@@ -45,12 +46,12 @@ export class Showroom extends React.Component<Props, States> {
         ) {
 			setTimeout(() => {
 				this.setState({ isLoading: true, loadedProjects: [this.props.currentProject.title, ...this.state.loadedProjects] });
-				this.initLoading();
+				this.loadImages();
 			});
         }
     }
 
-    initLoading() {
+    loadImages() {
         let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
 		let index = 0;
 		const load = () => {
@@ -87,6 +88,7 @@ export class Showroom extends React.Component<Props, States> {
                     {this.props.currentProject && this.props.currentProject.title === 'MMPro' && <MMPro/>}
                     {this.props.currentProject && this.props.currentProject.title === 'Nanotec' && <Nanotec currentDevice={this.props.currentDevice}/>}
                     {this.props.currentProject && this.props.currentProject.title === 'Personal Website' && <PersonalWebsite/>}
+                    {this.props.currentProject && this.props.currentProject.title === 'Phobius' && <Phobius currentDevice={this.props.currentDevice}/>}
                     {this.props.currentProject && this.props.currentProject.title === 'Shimmering Nightmare' && <ShimmeringNightmare currentDevice={this.props.currentDevice}/>}
                     {this.props.currentProject && this.props.currentProject.title === 'Showreel' && <Showreel currentDevice={this.props.currentDevice}/>}
                     {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte currentDevice={this.props.currentDevice}/>}

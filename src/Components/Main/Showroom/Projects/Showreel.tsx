@@ -25,6 +25,20 @@ export class Showreel extends React.Component<Props, {}> {
                         <p>Visual Effects</p>
                     </div>
                 </div>
+                <div className='category information'>
+                    <div>
+                        <p className='uppercase'>Collaboration</p>
+                        <p>D-Facto Motion GmbH</p>
+                        <p>Pixomondo GmbH</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>Adobe After Effects</p>
+                        <p>Adobe Photoshop</p>
+                        <p>Cinema 4D</p>
+                        <p>The Foundry Nuke</p>
+                    </div>
+                </div>
                 <Slider currentDevice={this.props.currentDevice}>
                     <img src='assets/projects/showreel/showreel_01.jpg'/>
                     <img src='assets/projects/showreel/showreel_02.jpg'/>

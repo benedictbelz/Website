@@ -24,10 +24,10 @@ export class Welcome extends React.Component<Props, States> {
     }
 
     componentDidMount() {
-		this.initLoading();
+		this.loadImages();
 	}
 
-    initLoading() {
+    loadImages() {
 		let images = document.images;
 		let index = 0;
 		const load = () => {

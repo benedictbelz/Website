@@ -32,6 +32,14 @@ module.exports = {
 				}
 			},
 			{
+				test: /\.mp4$/,
+				loader: "file-loader",
+				options: {
+					name: "[path][name].[ext]",
+					outputPath: "video"
+				}
+			},
+			{
 				test: /\.(scss|css)$/,
 				use: [
 					'style-loader',

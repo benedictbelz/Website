@@ -26,16 +26,21 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>Aleks Mijatovic</p>
                         <p>Shantu Bhattacharjee</p>
                     </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>Adobe After Effects</p>
+                        <p>Adobe Illustrator</p>
+                    </div>
                 </div>
                 <Slider currentDevice={this.props.currentDevice}>
-                    <img src='assets/projects/zdfaspekte/zdfaspekte_01.jpg'/>
-                    <img src='assets/projects/zdfaspekte/zdfaspekte_02.jpg'/>
-                    <img src='assets/projects/zdfaspekte/zdfaspekte_03.jpg'/>
-                    <img src='assets/projects/zdfaspekte/zdfaspekte_04.jpg'/>
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_01.jpg'/>
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_02.jpg'/>
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_03.jpg'/>
+                    <img src='assets/projects/zdfAspekte/zdfAspekte_04.jpg'/>
                 </Slider>
                 <div className='category text'>
                     <p>
@@ -45,7 +50,7 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/zdfaspekte/zdfaspekte.mp4' preload='metadata' poster='assets/projects/zdfaspekte/zdfaspekte_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video src='assets/projects/zdfAspekte/zdfAspekte.mp4' preload='metadata' poster='assets/projects/zdfAspekte/zdfAspekte_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
             </div>
         );

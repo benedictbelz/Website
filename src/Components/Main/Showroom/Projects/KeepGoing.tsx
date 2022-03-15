@@ -22,8 +22,14 @@ export class KeepGoing extends React.Component<{}, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>David Panagiotopulos</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>CSS</p>
+                        <p>HTML</p>
+                        <p>JavaScript</p>
                     </div>
                 </div>
                 <div className='category image square'>

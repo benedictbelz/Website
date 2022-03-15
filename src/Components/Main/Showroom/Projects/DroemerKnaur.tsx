@@ -13,7 +13,8 @@ export class DroemerKnaur extends React.Component<Props, {}> {
                 <div className='category information'>
                     <div>
                         <p className='uppercase'>Project</p>
-                        <p>Verlagsgruppe Droemer Knaur GmbH</p>
+                        <p>Verlagsgruppe</p>
+                        <p>Droemer Knaur GmbH</p>
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
@@ -26,13 +27,20 @@ export class DroemerKnaur extends React.Component<Props, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>Charlotte Kauer</p>
                         <p>Gabie Schnitzlein</p>
                         <p>Karsan Ameen</p>
                         <p>Klaus B. Wolf</p>
                         <p>Markus Röleke</p>
                         <p>Norbert Stengelin</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>Adobe After Effects</p>
+                        <p>Adobe Illustrator</p>
+                        <p>Adobe Photoshop</p>
+                        <p>Adobe Premiere</p>
                     </div>
                 </div>
                 <Slider currentDevice={this.props.currentDevice}>
@@ -45,7 +53,7 @@ export class DroemerKnaur extends React.Component<Props, {}> {
                 </Slider>
                 <div className='category text'>
                     <p>
-                        This project was developed for the German publishing house Droemer Knaur.
+                        This project was developed for the German publishing house »Droemer Knaur«.
                         It aimed to demonstrate the internal production process of a book and an e-book.
                         I established two sidekick characters which would run through all necessary steps
                         from the beginning writing process to the final publication. For demonstration purposes,

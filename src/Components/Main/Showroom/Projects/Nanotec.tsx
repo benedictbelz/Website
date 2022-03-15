@@ -26,8 +26,15 @@ export class Nanotec extends React.Component<Props, {}> {
                 </div>
                 <div className='category information'>
                     <div>
-                        <p className='uppercase'>Collaborators</p>
+                        <p className='uppercase'>Collaboration</p>
                         <p>Benno Wimmer</p>
+                    </div>
+                    <div>
+                        <p className='uppercase'>Technology</p>
+                        <p>Adobe After Effects</p>
+                        <p>Adobe Illustrator</p>
+                        <p>Adobe Premiere</p>
+                        <p>Cinema 4D</p>
                     </div>
                 </div>
                 <Slider currentDevice={this.props.currentDevice}>
