@@ -127,4 +127,11 @@
             margin-bottom: $spacing-l;
         }
     }
+
+    @media (max-width: $media-s) {
+        .wrapper{
+            width: 100%;
+            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+        }
+    }
 }

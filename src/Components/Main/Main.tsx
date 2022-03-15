@@ -70,7 +70,7 @@ class Main extends React.Component<{}, States> {
 	}
 
 	clickLeft() {
-
+		window.location.reload();
 	}
 
 	clickRight() {
