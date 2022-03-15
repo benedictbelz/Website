@@ -97,11 +97,6 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     <video src='assets/projects/admiralCloud/infoGraphic_16.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
                     <video src='assets/projects/admiralCloud/infoGraphic_17.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
                     <video src='assets/projects/admiralCloud/infoGraphic_18.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_19.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_20.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_21.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_22.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_23.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
                 </Slider>
                 <div className='category text'>
                     <p>

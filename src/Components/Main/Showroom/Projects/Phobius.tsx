@@ -37,7 +37,7 @@ export class Phobius extends React.Component<Props, {}> {
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/phobius/intro.mp4' preload='metadata' poster='assets/projects/phobius/phobius_03.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video src='assets/projects/phobius/intro.mp4' preload='metadata' poster='assets/projects/phobius/phobius_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
                 <div className='category text'>
                     <p>
@@ -46,7 +46,7 @@ export class Phobius extends React.Component<Props, {}> {
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/phobius/outro.mp4' preload='metadata' poster='assets/projects/phobius/phobius_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video src='assets/projects/phobius/outro.mp4' preload='metadata' poster='assets/projects/phobius/phobius_03.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
             </div>
         );
