@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Slider } from '../../../Slider/Slider';
-import { TypeDevice } from '../../../../@types/typeCommon';
+import { TypeDevice } from '../../../../@types/typeDevice';
 
 interface Props {
     currentDevice: TypeDevice | null;

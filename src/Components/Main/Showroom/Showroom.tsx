@@ -15,7 +15,7 @@ import { PersonalWebsite } from './Projects/PersonalWebsite';
 import { ShimmeringNightmare } from './Projects/ShimmeringNightmare';
 import { Showreel } from './Projects/Showreel';
 import { ZdfAspekte } from './Projects/ZdfAspekte';
-import { TypeDevice } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeDevice';
 import { TypeProject } from '../../../@types/typeProject';
 import './Showroom.scss';
 
@@ -75,7 +75,7 @@ export class Showroom extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <Scrollbar color={'white'} currentDevice={this.props.currentDevice} id={'showroom'}>
+            <Scrollbar color='White' currentDevice={this.props.currentDevice} id='showroom'>
                 <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
                 {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech currentDevice={this.props.currentDevice}/>}

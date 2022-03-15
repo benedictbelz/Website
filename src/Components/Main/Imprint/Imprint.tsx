@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
-import { TypeDevice } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeDevice';
 import './Imprint.scss';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 export class Imprint extends React.Component<Props,{}> {
 	render() {
 		return (
-            <Scrollbar color={'white'} currentDevice={this.props.currentDevice} id={'imprint'}>
+            <Scrollbar color='White' currentDevice={this.props.currentDevice} id='imprint'>
                 <div className='wrapper'>
                     <h1>
                         Information according to<br/>

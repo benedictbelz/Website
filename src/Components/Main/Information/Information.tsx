@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
-import { TypeDevice } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeDevice';
 import './Information.scss';
 
 interface Props {
@@ -23,7 +23,7 @@ export class Information extends React.Component<Props,{}> {
 
 	render() {
 		return (
-            <Scrollbar color={'white'} currentDevice={this.props.currentDevice} id={'information'}>
+            <Scrollbar color='White' currentDevice={this.props.currentDevice} id='information'>
                 <div className='wrapper'>
                     <div id='picture'>
                         <img src='assets/interface/picture.jpg' draggable='false' />

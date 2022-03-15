@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Project } from './Project/Project';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
-import { TypeDevice, TypePage } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeDevice';
+import { TypePage } from '../../../@types/typePage';
 import { TypeProject, TypeProjectSelection } from '../../../@types/typeProject';
 import './Portfolio.scss';
 
@@ -97,7 +98,7 @@ export class Portfolio extends React.Component<Props, States> {
 
 	render() {
 		return (
-			<Scrollbar color={'black'} currentDevice={this.props.currentDevice} id={'portfolio'}>
+			<Scrollbar color='Black' currentDevice={this.props.currentDevice} id='portfolio'>
 				<ul id='selection'>
 					{this.state.selection.map(selection => {
 						return (

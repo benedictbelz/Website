@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { TypeDevice } from '../../@types/typeCommon';
+import { TypeDevice } from '../../@types/typeDevice';
 import './Scrollbar.scss';
 
 interface Props {
-    color: 'black' | 'white';
+    color: 'Black' | 'White';
     currentDevice: TypeDevice | null;
     id: string;
 }
@@ -66,7 +66,7 @@ export class Scrollbar extends React.Component<Props, States> {
                         <div className={[
                             'scrollbar',
                             this.state.element ? this.state.element.id : '',
-                            this.props.color
+                            this.props.color === 'Black' ? 'black' : 'white'
                         ].filter((x) => x).join(' ')}>
                             <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
                         </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TypePage } from '../../../@types/typeCommon';
+import { TypePage } from '../../../@types/typePage';
 import './Header.scss';
 
 interface Props {

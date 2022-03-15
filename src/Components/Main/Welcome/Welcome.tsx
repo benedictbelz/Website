@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Loader } from '../../Loader/Loader';
 import { Logo } from './Logo/Logo';
-import { TypeDevice } from '../../../@types/typeCommon';
+import { TypeDevice } from '../../../@types/typeDevice';
 import './Welcome.scss';
 
 interface Props {
