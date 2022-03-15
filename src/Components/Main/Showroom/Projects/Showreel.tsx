@@ -24,8 +24,6 @@ export class Showreel extends React.Component<Props, {}> {
                         <p>Motion Design</p>
                         <p>Visual Effects</p>
                     </div>
-                </div>
-                <div className='category information'>
                     <div>
                         <p className='uppercase'>Collaboration</p>
                         <p>D-Facto Motion GmbH</p>

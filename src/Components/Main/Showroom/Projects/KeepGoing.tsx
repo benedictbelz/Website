@@ -19,8 +19,6 @@ export class KeepGoing extends React.Component<{}, {}> {
                         <p>UX Design</p>
                         <p>UI Design</p>
                     </div>
-                </div>
-                <div className='category information'>
                     <div>
                         <p className='uppercase'>Collaboration</p>
                         <p>David Panagiotopulos</p>

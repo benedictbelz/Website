@@ -24,8 +24,6 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                         <p>UX Design</p>
                         <p>UI Design</p>
                     </div>
-                </div>
-                <div className='category information'>
                     <div>
                         <p className='uppercase'>Collaboration</p>
                         <p>Anabell Jung</p>

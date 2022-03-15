@@ -23,8 +23,6 @@ export class ZdfAspekte extends React.Component<Props, {}> {
                         <p className='uppercase'>Role</p>
                         <p>Motion Design</p>
                     </div>
-                </div>
-                <div className='category information'>
                     <div>
                         <p className='uppercase'>Collaboration</p>
                         <p>Aleks Mijatovic</p>
