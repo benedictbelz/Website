@@ -16,25 +16,11 @@ body {
         }
 
         #imprint,
-        #information,
-        #portfolio,
-        #showroom,
-        #welcome {
-            position: absolute;
-            overflow-y: auto;
-            height: 100%;
-            width: 100%;
-        }
-
-        #imprint,
-        #information,
-        .scrollbar.imprint,
-        .scrollbar.information {
+        #information {
             transform: translate(100%, 0%);
         }
 
-        #showroom,
-        .scrollbar.showroom {
+        #showroom {
             transform: translate(-100%, 0%);
         }
 
@@ -43,44 +29,37 @@ body {
         }
 
         &.imprint {
-            #imprint,
-            .scrollbar.imprint { 
+            #imprint { 
                 transform: translate(0%, 0%);
             }
 
-            #portfolio,
-            .scrollbar.portfolio { 
+            #portfolio { 
                 transform: translate(-100%, 0%);
             }
         }
 
         &.information {
-            #information,
-            .scrollbar.information {
+            #information {
                 transform: translate(0%, 0%);
             }
 
-            #portfolio,
-            .scrollbar.portfolio {
+            #portfolio {
                 transform: translate(-100%, 0%);
             }
         }
 
         &.portfolio {
-            #portfolio,
-            .scrollbar.portfolio {
+            #portfolio {
                 transform: translate(0%, 0%);
             }
         }
 
         &.showroom {
-            #portfolio,
-            .scrollbar.portfolio {
+            #portfolio {
                 transform: translate(100%, 0%);
             }
 
-            #showroom,
-            .scrollbar.showroom {
+            #showroom {
                 transform: translate(0%, 0%);
             }
         }
@@ -89,8 +68,7 @@ body {
             #header { transform: translate(0%, 100vh) }
             #welcome { transform: translate(0%, 0%); }
 
-            #portfolio,
-            .scrollbar.portfolio {
+            #portfolio {
                 transform: translate(0%, 100%);
             }
         }
@@ -105,5 +83,39 @@ body {
                 transition: transform $transition-l ease;
             }
         }
-    }
+
+        &.desktop {
+            #imprint,
+            #information,
+            #portfolio,
+            #showroom,
+            #welcome {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+    
+            #imprint>.content,
+            #information>.content,
+            #portfolio>.content,
+            #showroom>.content {
+                overflow-y: auto;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    
+        &.mobile {
+            #imprint,
+            #information,
+            #portfolio,
+            #showroom,
+            #welcome {
+                position: absolute;
+                overflow-y: auto;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }    
 }

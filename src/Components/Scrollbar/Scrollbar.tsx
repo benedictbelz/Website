@@ -5,7 +5,7 @@ import './Scrollbar.scss';
 interface Props {
     color: 'black' | 'white';
     currentDevice: TypeDevice | null;
-    element: string;
+    id: string;
 }
 
 interface States {
@@ -15,21 +15,34 @@ interface States {
 
 export class Scrollbar extends React.Component<Props, States> {
 
-    state: States = {
-        element: null,
-        scroll: 0
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            element: null,
+            scroll: 0
+        }
+
+        setTimeout(() => this.initScrollbar());
     }
 
-    componentDidUpdate(prevProps: any) {
-        if (this.props.currentDevice === 'Desktop' && !prevProps.currentDevice) {
-            const element = document.getElementById(this.props.element);
-            this.setState({ element });
-            element.addEventListener('scroll', () => this.update());
-            window.addEventListener('resize', () => this.update());
+    initScrollbar() {
+        // IF MOBILE RETURN
+        if (this.props.currentDevice === 'Mobile') {
+            return;
         }
+        // GET ELEMENT
+        const element = document.querySelector('#' + this.props.id + '>.content') as unknown as HTMLElement;
+        // SET ELEMENT
+        this.setState({ element });
+        // EVENT LISTENER SCROLL
+        element.addEventListener('scroll', () => this.update());
+        // EVENT LISTENER RESIZE
+        window.addEventListener('resize', () => this.update());
     }
 
     update() {
+        // GET VARIABLES
         let height = this.state.element.scrollHeight - this.state.element.clientHeight;
         let scroll = this.state.element.scrollTop;
         let percentage = Math.floor(scroll/height*1000)/1000;
@@ -46,18 +59,23 @@ export class Scrollbar extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <>
-                {this.props.children}
-                {this.state.element && 
-                    <div className={[
-                        'scrollbar',
-                        this.state.element ? this.state.element.id : '',
-                        this.props.color
-                    ].filter((x) => x).join(' ')}>
-                        <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
-                    </div>
+            <div id={this.props.id}>
+                {this.props.currentDevice === 'Mobile' && this.props.children}
+                {this.props.currentDevice === 'Desktop' &&
+                    <>
+                        <div className={[
+                            'scrollbar',
+                            this.state.element ? this.state.element.id : '',
+                            this.props.color
+                        ].filter((x) => x).join(' ')}>
+                            <div style={ { transform: 'scaleY(' + this.state.scroll + ')' } }/>
+                        </div>
+                        <div className='content'>
+                            {this.props.children}
+                        </div>
+                    </>
                 }
-            </>
+            </div>
         );
 	}
 }

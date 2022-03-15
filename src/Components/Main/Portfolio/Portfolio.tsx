@@ -97,51 +97,49 @@ export class Portfolio extends React.Component<Props, States> {
 
 	render() {
 		return (
-			<Scrollbar color={'black'} currentDevice={this.props.currentDevice} element={'portfolio'}>
-				<div id='portfolio'>
-					<ul id='selection'>
-						{this.state.selection.map(selection => {
-							return (
-								<li
-									key={selection}
-									className={this.state.currentSelection === selection ? 'current' : ''}
-									onClick={() => {
-										if (this.state.currentSelection !== selection) {
-											this.setState({ currentSelection: selection });
-											setTimeout(() => this.fadeProjects());
-										}
-									}}
-								>
-									<img src={'assets/interface/' + selection.toLowerCase() + '.svg'} draggable='false'/>
-									<p>{selection}</p>
-								</li>
-							);
-						})}
-					</ul>
-					<div id='projects'>
-						{this.props.projects.map(project => {
-							return (
-								<Project
-									key={project.title}
-									clickProject={() => {
-										if (!this.state.isClicked) {
-											this.props.clickProject(project)
-											this.setState({ isClicked: true });
-											setTimeout(() => this.setState({ isClicked: false }), 500);
-										}
-									}}
-									currentDevice={this.props.currentDevice}
-									currentSelection={this.state.currentSelection}
-									project={project}
-								/>
-							);
-						})}
-					</div>
-					<div id='footer'>
-						<span>© Benedict Belz</span>
-						<span className='divider'/>
-						<span className='underline black' onClick={() => this.props.clickImprint()}>Imprint</span>
-					</div>
+			<Scrollbar color={'black'} currentDevice={this.props.currentDevice} id={'portfolio'}>
+				<ul id='selection'>
+					{this.state.selection.map(selection => {
+						return (
+							<li
+								key={selection}
+								className={this.state.currentSelection === selection ? 'current' : ''}
+								onClick={() => {
+									if (this.state.currentSelection !== selection) {
+										this.setState({ currentSelection: selection });
+										setTimeout(() => this.fadeProjects());
+									}
+								}}
+							>
+								<img src={'assets/interface/' + selection.toLowerCase() + '.svg'} draggable='false'/>
+								<p>{selection}</p>
+							</li>
+						);
+					})}
+				</ul>
+				<div id='projects'>
+					{this.props.projects.map(project => {
+						return (
+							<Project
+								key={project.title}
+								clickProject={() => {
+									if (!this.state.isClicked) {
+										this.props.clickProject(project)
+										this.setState({ isClicked: true });
+										setTimeout(() => this.setState({ isClicked: false }), 500);
+									}
+								}}
+								currentDevice={this.props.currentDevice}
+								currentSelection={this.state.currentSelection}
+								project={project}
+							/>
+						);
+					})}
+				</div>
+				<div id='footer'>
+					<span>© Benedict Belz</span>
+					<span className='divider'/>
+					<span className='underline black' onClick={() => this.props.clickImprint()}>Imprint</span>
 				</div>
 			</Scrollbar>
 		);

@@ -75,24 +75,22 @@ export class Showroom extends React.Component<Props, States> {
 
 	render() {
 		return (
-            <Scrollbar color={'white'} currentDevice={this.props.currentDevice} element={'showroom'}>
-                <div id='showroom'>
-                    <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
-                    {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Droemer Knaur' && <DroemerKnaur currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Être' && <Etre currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Keep Going' && <KeepGoing/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Lockdown' && <Lockdown currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Metropolis' && <Metropolis currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'MMPro' && <MMPro/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Nanotec' && <Nanotec currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Personal Website' && <PersonalWebsite/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Phobius' && <Phobius currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Shimmering Nightmare' && <ShimmeringNightmare currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'Showreel' && <Showreel currentDevice={this.props.currentDevice}/>}
-                    {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte currentDevice={this.props.currentDevice}/>}
-                </div>
+            <Scrollbar color={'white'} currentDevice={this.props.currentDevice} id={'showroom'}>
+                <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
+                {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Droemer Knaur' && <DroemerKnaur currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Être' && <Etre currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Keep Going' && <KeepGoing/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Lockdown' && <Lockdown currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Metropolis' && <Metropolis currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'MMPro' && <MMPro/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Nanotec' && <Nanotec currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Personal Website' && <PersonalWebsite/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Phobius' && <Phobius currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Shimmering Nightmare' && <ShimmeringNightmare currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'Showreel' && <Showreel currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'ZDF Aspekte' && <ZdfAspekte currentDevice={this.props.currentDevice}/>}
             </Scrollbar>
         );
 	}

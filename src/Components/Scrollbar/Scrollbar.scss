@@ -27,21 +27,21 @@
         }
     }
     
-    #imprint,
-    #information,
-    #legal,
-    #portfolio,
-    #showroom {
+    #imprint>.content,
+    #information>.content,
+    #legal>.content,
+    #portfolio>.content,
+    #showroom>.content {
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
     
     html::-webkit-scrollbar,
-    #imprint::-webkit-scrollbar,
-    #information::-webkit-scrollbar,
-    #legal::-webkit-scrollbar,
-    #portfolio::-webkit-scrollbar,
-    #showroom::-webkit-scrollbar {
+    #imprint>.content::-webkit-scrollbar,
+    #information>.content::-webkit-scrollbar,
+    #legal>.content::-webkit-scrollbar,
+    #portfolio>.content::-webkit-scrollbar,
+    #showroom>.content::-webkit-scrollbar {
         display: none;
         background-color: transparent;
         height: 0;
