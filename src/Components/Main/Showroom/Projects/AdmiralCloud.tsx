@@ -267,7 +267,7 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue,
+                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue
                         and juicy orange as accent colors. The font for the website is »Arial« which ensures an easy readibility.
                     </p>
                 </div>
