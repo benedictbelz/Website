@@ -38,9 +38,9 @@ export class MMPro extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        This website was a project for the production company »MMPro Media AG«.
-                        Their service consists of corporate video content across Germany and around the world.
-                        Their network consists of 1.400 film crews in 126 countries.
+                        This website was a project for the film production company »MMPro Media AG«.
+                        Their service offers corporate films across Germany and around the world with
+                        1.400 film crews in 126 countries.
                     </p>
                 </div>
                 <div className='category image'>

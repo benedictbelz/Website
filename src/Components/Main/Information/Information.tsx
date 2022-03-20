@@ -30,8 +30,12 @@ export class Information extends React.Component<Props,{}> {
                     </div>
                     <div id='introduction'>
                         <p>
-                            I'm a <span id='age'>{this.calculateAge()}</span> year old Designer living and working in Berlin. I like shaping digital products, creating films and diving into various disciplines of art.<br/><br/>
-                            I studied »Visual Communication« at Bauhaus University and am working currently as a freelancer.<br/><br/>
+                            I'm a <span id='age'>{this.calculateAge()}</span> year old Coder and Designer living and working in Berlin.
+                            I like shaping digital products, creating films and diving into various disciplines of art.
+                            <br/><br/>
+                            I studied »Visual Communication« at Bauhaus University and »Media Computer Science« at
+                            Hochschule für Technik und Wirtschaft and am working currently as a freelancer.
+                            <br/><br/>
                             Just write an email if you like to contact me. Rumors say that I will respond within the next 24 hours.
                         </p>
                     </div>
