@@ -30,6 +30,9 @@ export class Welcome extends React.Component<Props, States> {
     async loadMedia() {
 		let images = document.images;
         const loadImages = async () => await new Promise<void>(resolve => {
+            if (images.length === 0) {
+                resolve();
+            }
             let index = 0;
             const load = () => {
                 const getNextImage = () => {
@@ -55,12 +58,8 @@ export class Welcome extends React.Component<Props, States> {
             };
             load();
         });
-        if (images.length === 0) {
-            this.setState({ isLoading: false, percentage: 100 });
-        } else {
-            await loadImages();
-            this.setState({ isLoading: false, percentage: 100 });
-        }
+        await loadImages();
+        this.setState({ isLoading: false, percentage: 100 });
 	}
 
 	render() {

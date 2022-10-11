@@ -55,6 +55,9 @@ export class Showroom extends React.Component<Props, States> {
         let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
         let videos = document.querySelectorAll('#showroom .slider video') as unknown as HTMLVideoElement[];
         const loadImages = async () => await new Promise<void>(resolve => {
+            if (images.length === 0) {
+                resolve();
+            }
             let index = 0;
             const load = () => {
                 const getNextImage = () => {
@@ -74,6 +77,9 @@ export class Showroom extends React.Component<Props, States> {
             load();
         });
         const loadVideos = async () => await new Promise<void>(resolve => {
+            if (videos.length === 0) {
+                resolve();
+            }
             let index = 0;
             const load = () => {
                 const getNextVideo = () => {
@@ -94,13 +100,9 @@ export class Showroom extends React.Component<Props, States> {
             };
             load();
         });
-		if (images.length === 0 && videos.length === 0) {
-            this.setState({ isLoading: false, percentage: 100 });
-        } else {
-            await loadImages();
-            await loadVideos();
-            this.setState({ isLoading: false, percentage: 100 });
-        }
+        await loadImages();
+        await loadVideos();
+        this.setState({ isLoading: false, percentage: 100 });
     }
 
 	render() {
