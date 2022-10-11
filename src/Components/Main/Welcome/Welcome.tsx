@@ -24,33 +24,43 @@ export class Welcome extends React.Component<Props, States> {
     }
 
     componentDidMount() {
-		this.loadImages();
+		this.loadMedia();
 	}
 
-    loadImages() {
+    async loadMedia() {
 		let images = document.images;
-		let index = 0;
-		const load = () => {
-			const image = new Image();
-			image.src = images[index].src;
-			image.onload = () => {
-				index++;
-				if (index !== images.length) {
-                    this.setState({ percentage: Math.floor(index/images.length*100) });
-					setTimeout(load, 5);
-                } else if (this.props.currentDevice === 'Desktop' && !this.state.isRendered) {
-                    const interval = setInterval(() => {
-                        if (!this.state.isRendered) {
-                            clearInterval(interval);
-                            this.setState({ isLoading: false, percentage: 100 });
-                        }
-                    }, 50); 
-				} else {
-                    this.setState({ isLoading: false, percentage: 100 });
-                }
-			}
-		}
-		load();
+        const loadImages = async () => await new Promise<void>(resolve => {
+            let index = 0;
+            const load = () => {
+                const getNextImage = () => {
+                    index++;
+                    if (index !== images.length) {
+                        this.setState({ percentage: Math.floor(index/images.length*100) });
+                        setTimeout(load, 5);
+                    } else if (this.props.currentDevice === 'Desktop' && !this.state.isRendered) {
+                        const interval = setInterval(() => {
+                            if (!this.state.isRendered) {
+                                clearInterval(interval);
+                                this.setState({ isLoading: false, percentage: 100 });
+                            }
+                        }, 50); 
+                    } else {
+                        resolve();
+                    }
+                };
+                const image = new Image();
+                image.src = images[index].src;
+                image.onload = () => getNextImage();
+                image.onerror = () => getNextImage();
+            };
+            load();
+        });
+        if (images.length === 0) {
+            this.setState({ isLoading: false, percentage: 100 });
+        } else {
+            await loadImages();
+            this.setState({ isLoading: false, percentage: 100 });
+        }
 	}
 
 	render() {

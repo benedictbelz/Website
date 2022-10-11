@@ -46,30 +46,60 @@ export class Showroom extends React.Component<Props, States> {
         ) {
 			setTimeout(() => {
 				this.setState({ isLoading: true, loadedProjects: [this.props.currentProject.title, ...this.state.loadedProjects] });
-				this.loadImages();
+				this.loadMedia();
 			});
         }
     }
 
-    loadImages() {
+    async loadMedia() {
         let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
-		let index = 0;
-		const load = () => {
-			const image = new Image();
-			image.src = images[index].src;
-			image.onload = () => {
-				index++;
-				if (index === images.length) {
-					this.setState({ isLoading: false, percentage: 100 });
-                }
-				else {
-					this.setState({ percentage: Math.floor(index/images.length*100) });
-					setTimeout(load, 5);
-				}
-			}
-		}
-		if (images.length !== 0) {
+        let videos = document.querySelectorAll('#showroom .slider video') as unknown as HTMLVideoElement[];
+        const loadImages = async () => await new Promise<void>(resolve => {
+            let index = 0;
+            const load = () => {
+                const getNextImage = () => {
+                    index++;
+                    this.setState({ percentage: Math.floor(index/(images.length+videos.length)*100) });
+                    if (index !== images.length) {
+                        setTimeout(load, 5);
+                    } else {
+                        resolve();
+                    }
+                };
+                const image = new Image();
+                image.src = images[index].src;
+                image.onload = () => getNextImage();
+                image.onerror = () => getNextImage();
+            };
             load();
+        });
+        const loadVideos = async () => await new Promise<void>(resolve => {
+            let index = 0;
+            const load = () => {
+                const getNextVideo = () => {
+                    index++;
+                    this.setState({ percentage: Math.floor((index+images.length)/(images.length+videos.length)*100) });
+                    if (index !== videos.length) {
+                        setTimeout(load, 5);
+                    } else {
+                        resolve();
+                    }
+                };
+                const video = new XMLHttpRequest();
+                video.open('GET', videos[index].src, true);
+                video.responseType = 'blob';
+                video.onload = () => getNextVideo();
+                video.onerror = () => getNextVideo();
+                video.send();
+            };
+            load();
+        });
+		if (images.length === 0 && videos.length === 0) {
+            this.setState({ isLoading: false, percentage: 100 });
+        } else {
+            await loadImages();
+            await loadVideos();
+            this.setState({ isLoading: false, percentage: 100 });
         }
     }
 
