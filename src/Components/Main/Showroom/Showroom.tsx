@@ -53,7 +53,6 @@ export class Showroom extends React.Component<Props, States> {
 
     async loadMedia() {
         let images = document.querySelectorAll('#showroom img') as unknown as HTMLImageElement[];
-        let videos = document.querySelectorAll('#showroom .slider video') as unknown as HTMLVideoElement[];
         const loadImages = async () => await new Promise<void>(resolve => {
             if (images.length === 0) {
                 resolve();
@@ -62,7 +61,7 @@ export class Showroom extends React.Component<Props, States> {
             const load = () => {
                 const getNextImage = () => {
                     index++;
-                    this.setState({ percentage: Math.floor(index/(images.length+videos.length)*100) });
+                    this.setState({ percentage: Math.floor(index/(images.length)*100) });
                     if (index !== images.length) {
                         setTimeout(load, 5);
                     } else {
@@ -76,32 +75,7 @@ export class Showroom extends React.Component<Props, States> {
             };
             load();
         });
-        const loadVideos = async () => await new Promise<void>(resolve => {
-            if (videos.length === 0) {
-                resolve();
-            }
-            let index = 0;
-            const load = () => {
-                const getNextVideo = () => {
-                    index++;
-                    this.setState({ percentage: Math.floor((index+images.length)/(images.length+videos.length)*100) });
-                    if (index !== videos.length) {
-                        setTimeout(load, 5);
-                    } else {
-                        resolve();
-                    }
-                };
-                const video = new XMLHttpRequest();
-                video.open('GET', videos[index].src, true);
-                video.responseType = 'blob';
-                video.onload = () => getNextVideo();
-                video.onerror = () => getNextVideo();
-                video.send();
-            };
-            load();
-        });
         await loadImages();
-        await loadVideos();
         this.setState({ isLoading: false, percentage: 100 });
     }
 
