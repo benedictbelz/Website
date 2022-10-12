@@ -77,24 +77,24 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     </p>
                 </div>
                 <Slider currentDevice={this.props.currentDevice}>
-                    <video src='assets/projects/admiralCloud/infoGraphic_01.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_02.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_03.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_04.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_05.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_06.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_07.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_08.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_09.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_10.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_11.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_12.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_13.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_14.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_15.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_16.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_17.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
-                    <video src='assets/projects/admiralCloud/infoGraphic_18.mp4' autoPlay loop muted disablePictureInPicture playsInline preload='auto'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_01.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_02.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_03.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_04.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_05.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_06.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_07.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_08.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_09.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_10.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_11.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_12.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_13.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_14.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_15.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_16.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_17.gif'/>
+                    <img src='assets/projects/admiralCloud/infoGraphic_18.gif'/>
                 </Slider>
                 <div className='category text'>
                     <p>
