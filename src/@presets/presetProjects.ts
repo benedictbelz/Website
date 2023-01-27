@@ -25,16 +25,14 @@ export function getProjects(): TypeProject[] {
             title: 'AdmiralCloud',
             type: 'Digital',
             image: 'assets/projects/admiralCloud/preview.jpg',
-            www: 'https://www.admiralcloud.com',
             icon: 'White'
         },
-        {
-            title: 'MMPro',
-            type: 'Digital',
-            image: 'assets/projects/mmpro/preview.jpg',
-            www: 'https://www.mmpro.de',
-            icon: 'Black'
-        },
+        // {
+        //     title: 'MMPro',
+        //     type: 'Digital',
+        //     image: 'assets/projects/mmpro/preview.jpg',
+        //     icon: 'Black'
+        // },
         {
             title: 'Metropolis',
             type: 'Film',
@@ -42,12 +40,12 @@ export function getProjects(): TypeProject[] {
             vimeo: 'https://vimeo.com/384393962',
             icon: 'White'
         },
-        {  
-            title: 'Art Attech',
-            type: 'Film',
-            image: 'assets/projects/artAttech/preview.jpg',
-            icon: 'White'
-        },
+        // {  
+        //     title: 'Art Attech',
+        //     type: 'Film',
+        //     image: 'assets/projects/artAttech/preview.jpg',
+        //     icon: 'White'
+        // },
         {
             title: 'Être',
             type: 'Film',
@@ -69,12 +67,12 @@ export function getProjects(): TypeProject[] {
             github: 'https://github.com/benedictbelz/Website',
             icon: 'Black'
         },
-        {
-            title: 'Keep Going',
-            type: 'Digital',
-            image: 'assets/projects/keepGoing/preview.jpg',
-            icon: 'Black'
-        },
+        // {
+        //     title: 'Keep Going',
+        //     type: 'Digital',
+        //     image: 'assets/projects/keepGoing/preview.jpg',
+        //     icon: 'Black'
+        // },
         {
             title: 'Nanotec',
             type: 'Film',

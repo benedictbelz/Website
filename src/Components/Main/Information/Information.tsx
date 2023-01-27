@@ -26,7 +26,7 @@ export class Information extends React.Component<Props,{}> {
             <Scrollbar color='White' currentDevice={this.props.currentDevice} id='information'>
                 <div className='wrapper'>
                     <div id='picture'>
-                        <img src='assets/interface/picture.jpg' draggable='false' />
+                        <img src='assets/interface/profile.jpg' draggable='false' />
                     </div>
                     <div id='introduction'>
                         <p>
