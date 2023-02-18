@@ -84,7 +84,7 @@ export class Showroom extends React.Component<Props, States> {
 		return (
             <Scrollbar color='White' currentDevice={this.props.currentDevice} id='showroom'>
                 <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
-                {this.props.currentProject && this.props.currentProject.title === 'AC Sync' && <AcSync currentDevice={this.props.currentDevice}/>}
+                {this.props.currentProject && this.props.currentProject.title === 'AC Sync' && <AcSync/>}
                 {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'Droemer Knaur' && <DroemerKnaur currentDevice={this.props.currentDevice}/>}
