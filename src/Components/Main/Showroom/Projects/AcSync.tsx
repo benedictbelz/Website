@@ -280,12 +280,12 @@ export class AcSync extends React.Component<{}, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        The »Download« folders allow filter options like »Media Types«, »Dates«, »Names« »Tags« or »Security Groups«
-                        to download all files accordingly for each folder. If changes have been made in the »Digital Asset Management«
-                        all files get updated or replaced automatically. As for »Upload« folders, it's possible to check for updates
+                        The »Download« folders allow filter options like »Dates«, »Names« or »Types« to download
+                        files accordingly for each folder. If changes have been made in the »Digital Asset Management«
+                        the files get updated or replaced automatically. As for »Upload« folders, it's possible to check for updates
                         periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also
-                        provides an additional feature to open specific files automatically in a preferred software like »Adobe Photoshop«
-                        or »Microsoft Excel« to edit files easily on the go.
+                        provides a feature to open specific files automatically in a preferred software like »Adobe Photoshop«
+                        or »Microsoft Excel« to edit them easily on the go.
                     </p>
                 </div>
                 <div className='category video'>

@@ -7,7 +7,7 @@ export class PersonalWebsite extends React.Component<{}, {}> {
                 <div className='category information'>
                     <div>
                         <p className='uppercase'>Project</p>
-                        <p>Personale Website</p>
+                        <p>Personal Website</p>
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
