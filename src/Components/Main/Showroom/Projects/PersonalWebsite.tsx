@@ -20,8 +20,8 @@ export class PersonalWebsite extends React.Component<{}, {}> {
                         <p>UI Design</p>
                     </div>
                 </div>
-                <div className='category image square'>
-                    <img src='assets/projects/personalWebsite/media.png'/>
+                <div className='category image'>
+                    <img src='assets/projects/personalWebsite/media.png' style={{ borderRadius: 0 }}/>
                 </div>
                 <div className='category text'>
                     <p>

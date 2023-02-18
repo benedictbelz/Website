@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Loader } from '../../Loader/Loader';
 import { Scrollbar } from '../../Scrollbar/Scrollbar';
+import { AcSync } from './Projects/AcSync';
 import { AdmiralCloud } from './Projects/AdmiralCloud';
 import { ArtAttech } from './Projects/ArtAttech';
 import { DroemerKnaur } from './Projects/DroemerKnaur';
@@ -83,6 +84,7 @@ export class Showroom extends React.Component<Props, States> {
 		return (
             <Scrollbar color='White' currentDevice={this.props.currentDevice} id='showroom'>
                 <Loader color='Black' isLoading={this.state.isLoading} percentage={this.state.percentage}/>
+                {this.props.currentProject && this.props.currentProject.title === 'AC Sync' && <AcSync currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'AdmiralCloud' && <AdmiralCloud currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'Art Attech' && <ArtAttech currentDevice={this.props.currentDevice}/>}
                 {this.props.currentProject && this.props.currentProject.title === 'Droemer Knaur' && <DroemerKnaur currentDevice={this.props.currentDevice}/>}

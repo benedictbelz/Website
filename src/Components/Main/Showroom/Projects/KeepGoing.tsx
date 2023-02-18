@@ -30,8 +30,8 @@ export class KeepGoing extends React.Component<{}, {}> {
                         <p>JavaScript</p>
                     </div>
                 </div>
-                <div className='category image square'>
-                    <img src='assets/projects/keepGoing/media.png'/>
+                <div className='category image'>
+                    <img src='assets/projects/keepGoing/media.png' style={{ borderRadius: 0 }}/>
                 </div>
                 <div className='category text'>
                     <p>

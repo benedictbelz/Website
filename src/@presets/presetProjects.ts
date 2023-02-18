@@ -8,6 +8,12 @@ export function getProjects(): TypeProject[] {
             image: 'assets/projects/phobius/preview.jpg',
             icon: 'Black'
         },
+        {
+            title: 'AC Sync',
+            type: 'Digital',
+            image: 'assets/projects/acSync/preview.jpg',
+            icon: 'White'
+        },
         {  
             title: 'ZDF Aspekte',
             type: 'Film',
@@ -21,12 +27,12 @@ export function getProjects(): TypeProject[] {
             vimeo: 'https://vimeo.com/418880046',
             icon: 'Black'
         },
-        {
-            title: 'AdmiralCloud',
-            type: 'Digital',
-            image: 'assets/projects/admiralCloud/preview.jpg',
-            icon: 'White'
-        },
+        // {
+        //     title: 'AdmiralCloud',
+        //     type: 'Digital',
+        //     image: 'assets/projects/admiralCloud/preview.jpg',
+        //     icon: 'White'
+        // },
         // {
         //     title: 'MMPro',
         //     type: 'Digital',

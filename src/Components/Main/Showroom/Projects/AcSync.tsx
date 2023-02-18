@@ -1,23 +1,17 @@
 import * as React from 'react';
-import { Slider } from '../../../Slider/Slider';
-import { TypeDevice } from '../../../../@types/typeDevice';
 
-interface Props {
-    currentDevice: TypeDevice | null;
-}
-
-export class AdmiralCloud extends React.Component<Props, {}> {
+export class AcSync extends React.Component<{}, {}> {
     render() {
         return (
             <div className='wrapper'>
                 <div className='category information'>
                     <div>
                         <p className='uppercase'>Project</p>
-                        <p>AdmiralCloud AG</p>
+                        <p>AC Sync</p>
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2020</p>
+                        <p>2021</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
@@ -27,81 +21,49 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                     </div>
                     <div>
                         <p className='uppercase'>Collaboration</p>
-                        <p>Anabell Jung</p>
                         <p>Daniel Züwerink</p>
+                        <p>Julius Eckert</p>
                     </div>
                     <div>
                         <p className='uppercase'>Technology</p>
-                        <p>CSS</p>
-                        <p>HTML</p>
-                        <p>JavaScript</p>
-                        <p>WordPress</p>
+                        <p>React</p>
+                        <p>Electron</p>
+                        <p>TypeScript</p>
                     </div>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/media.png' style={{ borderRadius: 0 }}/>
+                    <img src='assets/projects/acSync/media.png' style={{ borderRadius: 0 }}/>
                 </div>
                 <div className='category text'>
                     <p>
-                        This website was a project for the company »AdmiralCloud AG«.
-                        Their main product is a »Digital Asset Management« which includes a media
-                        management system, a collaboration tool and additional presentation possibilities.
+                        This was a project for the company »AdmiralCloud AG«.
+                        Their main product is a »Digital Asset Management« which can be used
+                        to store and manage files such as images, movies, audios or documents.
+                        Among other things, it enables organizing, finding, editing 
+                        and publishing various files from all over the world.
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_01.jpg'/>
+                    <img src='assets/projects/acSync/client.jpg'/>
                 </div>
                 <div className='category text'>
                     <p>
-                        The original logo was a combination of the letters »A« and »C« forming a loop as a
-                        metaphor for the unlimited possibilities in the media magagement system.
-                        Furthermore, it symbolizes a cloud as well.
+                        To provide a better integration we developed »AC Sync«, which synchronizes data 
+                        from the »Digital Asset Management« to a desktop device so that customers can
+                        access and edit files independently of their network connection. This was developed
+                        for MacOS and Windows and works in a way like »Dropbox« which offers custom functionalities
+                        like creating »Download« or »Upload« folders.
                     </p>
                 </div>
-                <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_02.jpg'/>
+                <div className='category video'>
+                    <video src='assets/projects/acSync/acSync_01.mp4' preload='metadata' poster='assets/projects/acSync/acSync_01.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
                 <div className='category text'>
                     <p>
-                        We wanted to modernize the logo to improve readibility. In this way, both letters should be
-                        clearly legible and the overall look appearing and straightforward. I tried different color
-                        palettes and played around with different shapes.
-                    </p>
-                </div>
-                <div className='category image'>
-                    <img src='assets/projects/admiralCloud/logo_03.jpg'/>
-                </div>
-                <div className='category text'>
-                    <p>
-                        We decided to go with the most simple approach and created a colorful and flat version of the logo. 
-                        This has enabled us to use the logo for various purposes, be it marketing brochures, the website or product branding.
-                    </p>
-                </div>
-                <Slider currentDevice={this.props.currentDevice}>
-                    <img src='assets/projects/admiralCloud/infoGraphic_01.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_02.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_03.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_04.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_05.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_06.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_07.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_08.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_09.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_10.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_11.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_12.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_13.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_14.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_15.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_16.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_17.gif'/>
-                    <img src='assets/projects/admiralCloud/infoGraphic_18.gif'/>
-                </Slider>
-                <div className='category text'>
-                    <p>
-                        I animated several infographics to illustrate the different features of the product.
-                        All the individual graphics are attached at the upper side of each page to offer a quick understanding.
-                        We chose the »GIF« format to ensure an accurate representation of each color.
+                        For the user interface design we kept the color palette similar to the »Digital Asset Management«.
+                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue
+                        and juicy orange as accent colors. Most importantly we established high contrast between all
+                        colors and picked »Roboto« to ensure easy readibility.
                     </p>
                 </div>
                 <div className='category design'>
@@ -139,43 +101,6 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                             <div style={{ background: '#4C5F73' }}></div>
                             <div style={{ background: '#677888' }}></div>
                             <div style={{ background: '#9AA5B0' }}></div>
-                            <div style={{ background: '#FFFFFF' }}></div>
-                        </div>
-                    </div>
-                    <div className='color'>
-                        <div style={{color: '#FFFFFF', background: '#90A0AF' }}>
-                            <div>
-                                <p className='bold'>Pantone</p>
-                                <p>7543 C</p>
-                            </div>
-                            <div>
-                                <p className='bold'>C</p>
-                                <p>17%</p>
-                                <p className='bold'>M</p>
-                                <p>9%</p>
-                                <p className='bold'>Y</p>
-                                <p>0%</p>
-                                <p className='bold'>K</p>
-                                <p>31%</p>
-                            </div>
-                            <div>
-                                <p className='bold'>R</p>
-                                <p>145</p>
-                                <p className='bold'>G</p>
-                                <p>160</p>
-                                <p className='bold'>B</p>
-                                <p>175</p>
-                            </div>
-                            <div>
-                                <p className='bold'>HEX</p>
-                                <p>#91A0AF</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div style={{ background: '#A0ADBA' }}></div>
-                            <div style={{ background: '#A9B5C1' }}></div>
-                            <div style={{ background: '#B6C0CA' }}></div>
-                            <div style={{ background: '#CFD5DC' }}></div>
                             <div style={{ background: '#FFFFFF' }}></div>
                         </div>
                     </div>
@@ -253,8 +178,82 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                             <div style={{ background: '#FFFFFF' }}></div>
                         </div>
                     </div>
-                    <div className='font' style={{ fontFamily: 'Arial, Helvetica Neue, sans-serif', color: '#19324B' }}>
-                        <p>Arial</p>
+                    <div className='color'>
+                        <div style={{color: '#19324B', background: '#E1E6EB' }}>
+                            <div>
+                                <p className='bold'>Pantone</p>
+                                <p>656 C</p>
+                            </div>
+                            <div>
+                                <p className='bold'>C</p>
+                                <p>4%</p>
+                                <p className='bold'>M</p>
+                                <p>2%</p>
+                                <p className='bold'>Y</p>
+                                <p>0%</p>
+                                <p className='bold'>K</p>
+                                <p>8%</p>
+                            </div>
+                            <div>
+                                <p className='bold'>R</p>
+                                <p>225</p>
+                                <p className='bold'>G</p>
+                                <p>230</p>
+                                <p className='bold'>B</p>
+                                <p>235</p>
+                            </div>
+                            <div>
+                                <p className='bold'>HEX</p>
+                                <p>#E1E6EB</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ background: '#E5EAEE' }}></div>
+                            <div style={{ background: '#E8ECEF' }}></div>
+                            <div style={{ background: '#EBEFF2' }}></div>
+                            <div style={{ background: '#F2F4F6' }}></div>
+                            <div style={{ background: '#FFFFFF' }}></div>
+                        </div>
+                    </div>
+                    <div className='color'>
+                        <div style={{color: '#FFFFFF', background: '#FF0027' }}>
+                            <div>
+                                <p className='bold'>Pantone</p>
+                                <p>185 C</p>
+                            </div>
+                            <div>
+                                <p className='bold'>C</p>
+                                <p>0%</p>
+                                <p className='bold'>M</p>
+                                <p>100%</p>
+                                <p className='bold'>Y</p>
+                                <p>85%</p>
+                                <p className='bold'>K</p>
+                                <p>0%</p>
+                            </div>
+                            <div>
+                                <p className='bold'>R</p>
+                                <p>255</p>
+                                <p className='bold'>G</p>
+                                <p>0</p>
+                                <p className='bold'>B</p>
+                                <p>39</p>
+                            </div>
+                            <div>
+                                <p className='bold'>HEX</p>
+                                <p>#FF0027</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ background: '#FF2445' }}></div>
+                            <div style={{ background: '#FF3857' }}></div>
+                            <div style={{ background: '#FF5770' }}></div>
+                            <div style={{ background: '#FF8FA0' }}></div>
+                            <div style={{ background: '#FFFFFF' }}></div>
+                        </div>
+                    </div>
+                    <div className='font' style={{ fontFamily: 'Roboto, Helvetica Neue, sans-serif', color: '#19324B' }}>
+                        <p>Roboto</p>
                         <div>
                             <p style={{ fontWeight: 100 }}>Aa</p>
                             <p style={{ fontWeight: 300 }}>Bb</p>
@@ -268,21 +267,29 @@ export class AdmiralCloud extends React.Component<Props, {}> {
                 </div>
                 <div className='category text'>
                     <p>
-                        We used a dark blue and a soft grey as fundamental colors and introduced a light blue
-                        and juicy orange as accent colors. The font for the website is »Arial« which ensures an easy readibility.
+                        The »Upload« folders allow customizations like »Tags« and »Security Groups«
+                        to structure uploaded files accordingly in the »Digital Asset Management«.
+                        Futhermore, it's possible to let »AC Sync« upload all files from the folder periodically
+                        in a time span of one minute, one hour or one day. All files are scanned beforehad and
+                        uploaded only when they are not already inlcuded in the »Digital Asset Management«
+                        or have been changed manually by the user.
                     </p>
                 </div>
-                <div className='category image'>
-                    <img src='assets/projects/admiralCloud/admiralCloud_01.jpg'/>
+                <div className='category video'>
+                    <video src='assets/projects/acSync/acSync_02.mp4' preload='metadata' poster='assets/projects/acSync/acSync_02.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
                 <div className='category text'>
                     <p>
-                        All pages contain the same navigation and header which also introduce the particular functionality of the product.
-                        The whole concept is orientated torwards »Flat Design« which offers clarity and a simple comprehension.
+                        The »Download« folders allow filter options like »Media Types«, »Dates«, »Names« »Tags« or »Security Groups«
+                        to download all files accordingly for each folder. If changes have been made in the »Digital Asset Management«
+                        all files get updated or replaced automatically. As for »Upload« folders, it's possible to check for updates
+                        periodically in a time span of one minute, one hour or one day. The »Digital Asset Management« also
+                        provides an additional feature to open specific files automatically in a preferred software like »Adobe Photoshop«
+                        or »Microsoft Excel« to edit files easily on the go.
                     </p>
                 </div>
-                <div className='category image'>
-                    <img src='assets/projects/admiralCloud/admiralCloud_02.jpg'/>
+                <div className='category video'>
+                    <video src='assets/projects/acSync/acSync_03.mp4' preload='metadata' poster='assets/projects/acSync/acSync_03.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
             </div>
         );

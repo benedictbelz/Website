@@ -33,8 +33,8 @@ export class MMPro extends React.Component<{}, {}> {
                         <p>WordPress</p>
                     </div>
                 </div>
-                <div className='category image square'>
-                    <img src='assets/projects/mmpro/media.png'/>
+                <div className='category image'>
+                    <img src='assets/projects/mmpro/media.png' style={{ borderRadius: 0 }}/>
                 </div>
                 <div className='category text'>
                     <p>
