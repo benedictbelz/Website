@@ -44,7 +44,7 @@ export class AcSync extends React.Component<{}, {}> {
                     </p>
                 </div>
                 <div className='category image'>
-                    <img src='assets/projects/acSync/client.jpg'/>
+                    <img src='assets/projects/acSync/client.jpg' style={{ borderRadius: 5 }}/>
                 </div>
                 <div className='category text'>
                     <p>
