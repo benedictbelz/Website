@@ -20,13 +20,13 @@ export function getProjects(): TypeProject[] {
             image: 'assets/projects/zdfAspekte/preview.jpg',
             icon: 'Black'
         },
-        {  
-            title: 'Lockdown',
-            type: 'Film',
-            image: 'assets/projects/lockdown/preview.jpg',
-            vimeo: 'https://vimeo.com/418880046',
-            icon: 'Black'
-        },
+        // {  
+        //     title: 'Lockdown',
+        //     type: 'Film',
+        //     image: 'assets/projects/lockdown/preview.jpg',
+        //     vimeo: 'https://vimeo.com/418880046',
+        //     icon: 'Black'
+        // },
         // {
         //     title: 'AdmiralCloud',
         //     type: 'Digital',
@@ -39,26 +39,26 @@ export function getProjects(): TypeProject[] {
         //     image: 'assets/projects/mmpro/preview.jpg',
         //     icon: 'Black'
         // },
-        {
-            title: 'Metropolis',
-            type: 'Film',
-            image: 'assets/projects/metropolis/preview.jpg',
-            vimeo: 'https://vimeo.com/384393962',
-            icon: 'White'
-        },
+        // {
+        //     title: 'Metropolis',
+        //     type: 'Film',
+        //     image: 'assets/projects/metropolis/preview.jpg',
+        //     vimeo: 'https://vimeo.com/384393962',
+        //     icon: 'White'
+        // },
         // {  
         //     title: 'Art Attech',
         //     type: 'Film',
         //     image: 'assets/projects/artAttech/preview.jpg',
         //     icon: 'White'
         // },
-        {
-            title: 'Être',
-            type: 'Film',
-            image: 'assets/projects/etre/preview.jpg',
-            vimeo: 'https://vimeo.com/343962029',
-            icon: 'White'
-        },
+        // {
+        //     title: 'Être',
+        //     type: 'Film',
+        //     image: 'assets/projects/etre/preview.jpg',
+        //     vimeo: 'https://vimeo.com/343962029',
+        //     icon: 'White'
+        // },
         {
             title: 'Showreel',
             type: 'Film',
@@ -95,11 +95,11 @@ export function getProjects(): TypeProject[] {
             vimeo: 'https://vimeo.com/161849901',
             icon: 'White'
         },
-        {
-            title: 'Shimmering Nightmare',
-            type: 'Art',
-            image: 'assets/projects/shimmeringNightmare/preview.jpg',
-            icon: 'Black'
-        },
+        // {
+        //     title: 'Shimmering Nightmare',
+        //     type: 'Art',
+        //     image: 'assets/projects/shimmeringNightmare/preview.jpg',
+        //     icon: 'Black'
+        // },
     ]
 }

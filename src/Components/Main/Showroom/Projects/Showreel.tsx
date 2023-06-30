@@ -17,7 +17,7 @@ export class Showreel extends React.Component<Props, {}> {
                     </div>
                     <div>
                         <p className='uppercase'>Year</p>
-                        <p>2019</p>
+                        <p>2020</p>
                     </div>
                     <div>
                         <p className='uppercase'>Role</p>
@@ -46,6 +46,8 @@ export class Showreel extends React.Component<Props, {}> {
                     <img src='assets/projects/showreel/showreel_06.jpg'/>
                     <img src='assets/projects/showreel/showreel_07.jpg'/>
                     <img src='assets/projects/showreel/showreel_08.jpg'/>
+                    <img src='assets/projects/showreel/showreel_09.jpg'/>
+                    <img src='assets/projects/showreel/showreel_10.jpg'/>
                 </Slider>
                 <div className='category text'>
                     <p>
@@ -55,7 +57,7 @@ export class Showreel extends React.Component<Props, {}> {
                     </p>
                 </div>
                 <div className='category video'>
-                    <video src='assets/projects/showreel/showreel.mp4' preload='metadata' poster='assets/projects/showreel/showreel_08.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
+                    <video src='assets/projects/showreel/showreel.mp4' preload='metadata' poster='assets/projects/showreel/showreel_07.jpg' controls disablePictureInPicture controlsList='nodownload noremoteplayback'/>
                 </div>
             </div>
         );

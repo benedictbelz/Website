@@ -27,7 +27,7 @@ export class Portfolio extends React.Component<Props, States> {
 	state: States = {
 		currentSelection: 'All',
 		isClicked: false,
-		selection: ['All', 'Digital', 'Film', 'Art'],
+		selection: ['All', 'Digital', 'Film'],
 	};
 
 	componentDidMount() {
