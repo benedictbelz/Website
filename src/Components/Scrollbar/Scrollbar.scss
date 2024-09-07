@@ -1,6 +1,6 @@
-@import '../../General/Variables.scss';
+@import '../../App/Variables.scss';
 
-#main.desktop {
+#app.desktop {
     .scrollbar {
         pointer-events: none;
         position: fixed;

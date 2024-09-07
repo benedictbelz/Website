@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { TypeDevice } from '../../@types/typeDevice';
+import { Browser } from '../../@types/browser';
 import './Scrollbar.scss';
 
 interface Props {
+    browser: Browser;
+    children: React.ReactNode;
     color: 'Black' | 'White';
-    currentDevice: TypeDevice | null;
     id: string;
 }
 
@@ -28,7 +29,7 @@ export class Scrollbar extends React.Component<Props, States> {
 
     initScrollbar() {
         // IF MOBILE RETURN
-        if (this.props.currentDevice === 'Mobile') {
+        if (this.props.browser.device === 'Mobile') {
             return;
         }
         // GET ELEMENT
@@ -60,8 +61,8 @@ export class Scrollbar extends React.Component<Props, States> {
 	render() {
 		return (
             <div id={this.props.id}>
-                {this.props.currentDevice === 'Mobile' && this.props.children}
-                {this.props.currentDevice === 'Desktop' &&
+                {this.props.browser.device === 'Mobile' && this.props.children}
+                {this.props.browser.device === 'Desktop' &&
                     <>
                         <div className={[
                             'scrollbar',

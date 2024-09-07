@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { TypeDevice } from '../../@types/typeDevice';
+import { Browser } from '../../@types/browser';
 import './Slider.scss';
 
 interface Props {
-    currentDevice: TypeDevice | null;
+    browser: Browser;
+    children: React.ReactNode;
 }
 
 interface States {
@@ -87,14 +88,14 @@ export class Slider extends React.Component<Props, States> {
                 this.currentImage();
         }
         // IF DESKTOP
-        if (this.props.currentDevice === 'Desktop') {
+        if (this.props.browser.device === 'Desktop') {
             drag.addEventListener('mousedown', event => start(event.clientX));
             drag.addEventListener('mousemove', event => move(event.clientX));
             drag.addEventListener('mouseup', () => end());
             drag.addEventListener('mouseout', () => end());
         }
         // IF MOBILE
-        if (this.props.currentDevice === 'Mobile') {
+        if (this.props.browser.device === 'Mobile') {
             drag.addEventListener('touchstart', event => start(event.touches[0].clientX));
             drag.addEventListener('touchmove', event => move(event.touches[0].clientX));
             drag.addEventListener('touchend', () => end());
@@ -130,7 +131,7 @@ export class Slider extends React.Component<Props, States> {
             }
         }
         // SET BULLETS
-        this.state.bullets[this.state.current].classList.add('current');
+        this.state.bullets[this.state.current]?.classList.add('current');
     }
 
     setImages() {

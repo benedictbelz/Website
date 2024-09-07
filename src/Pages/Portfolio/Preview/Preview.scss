@@ -1,0 +1,159 @@
+@import '../../../App/Variables.scss';
+
+.project {
+    cursor: pointer;
+    display: none;
+    box-sizing: border-box;
+    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread $color-black-shadow;
+    border-radius: $border-radius-l;
+    
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: $border-radius-l;
+        transition: transform $transition-s ease;
+        transform: scale(1);
+
+        .label {
+            box-sizing: border-box;
+            pointer-events: none;
+            position: absolute;
+            z-index: 150;
+            top: $spacing-m;
+            right: $spacing-m;
+            height: $spacing-icon-xs;
+            width: $spacing-icon-xs;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .description {        
+            position: absolute;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: $border-radius-l;
+            overflow: hidden;
+            transition: background-color $transition-s ease;
+            background-color: transparent;
+    
+            .title {
+                pointer-events: none;
+                text-align: center;
+                color: $color-white;
+                font-weight: $font-weight-regular;
+                transition: opacity $transition-s ease,
+                            transform $transition-s ease;
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+    
+        .link {
+            position: absolute;
+            z-index: 200;
+            bottom: 0;
+            left: 0;
+            margin: $spacing-m;
+            display: flex;
+    
+            a {
+                display: block;
+                height: $spacing-icon-m;
+                width: $spacing-icon-m;
+                opacity: 0;
+                transition: transform $transition-s ease;
+                transform: scale(0);
+    
+                img {
+                    width: 100%;
+                    transition: transform $transition-s ease;
+                    transform: scale(1);
+                    filter: invert(1);
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: $spacing-s;
+                }
+            }
+        }
+    
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: $border-radius-l;
+            overflow: hidden;
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &.white .wrapper .label{
+        filter: invert(1);
+    }
+
+    &.show {
+        display: block;
+    }
+
+    &.opacity {
+        opacity: 0;
+    }
+
+    &.fade {
+        animation-name: fade;
+        animation-duration: $transition-l;
+        animation-timing-function: ease-out;
+        animation-fill-mode: backwards;
+
+        @keyframes fade {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#app.desktop .project {
+    .link a img:hover {
+        transform: scale(1.25);
+    }
+
+    .wrapper:hover {
+        transform: scale(1.025);
+    
+        .description {
+            background-color: $color-black-transparent;
+    
+            .title {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    
+        .link a {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &.black .wrapper:hover .label {
+        transition: filter 0.25s ease;
+        filter: invert(1);
+    }
+}

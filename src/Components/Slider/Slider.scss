@@ -1,4 +1,4 @@
-@import '../../General/Variables.scss';
+@import '../../App/Variables.scss';
 
 .slider{
     position: relative;
@@ -135,7 +135,7 @@
     }
 }
 
-#main.mobile {
+#app.mobile {
     .slider>.click {
         display: none;
     }

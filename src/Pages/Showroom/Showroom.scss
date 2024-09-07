@@ -1,0 +1,171 @@
+@import '../../App/Variables.scss';
+
+#showroom {
+    background-color: $color-black;
+    color: $color-white;
+
+    .wrapper {
+        box-sizing: border-box;
+        margin: 0 auto;
+        transition: padding $transition-s ease,
+                    width $transition-s ease;
+        padding-top: $spacing-header;
+        padding-bottom: $spacing-l;
+        width: $spacing-wrapper;
+
+        .design {
+            overflow: hidden;
+            width: 100%;
+            border-radius: $border-radius-l;
+            border: 1px solid $color-white;
+
+            .color {
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                width: 100%;
+
+                >div:first-child {
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 80%;
+                    width: 100%;
+                    padding: 0 $spacing-l;
+                    font-size: $font-size-m;
+                    font-weight: $font-weight-regular;
+
+                    .bold {
+                        text-transform: uppercase;
+                        letter-spacing: 2.5px;
+                        margin-right: $spacing-s;
+                    }
+
+                    >div:nth-child(1),
+                    >div:nth-child(4) {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                    }
+
+                    >div:nth-child(2),
+                    >div:nth-child(3) {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+
+                >div:last-child {
+                    display: flex;
+                    flex-direction: row;
+                    height: $spacing-l;
+                    width: 100%;
+
+                    >div {
+                        height: 100%;
+                        width: 20%;
+                    }
+                }
+            }
+            
+            .font {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 200px;
+                width: 100%;
+                background: #FFFFFF;
+                padding: 0 $spacing-l;
+
+                >div {
+                    overflow: hidden;
+                    display: flex;
+                    font-size: $font-size-xxl;
+                }
+
+                p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        .image {
+            width: 100%;
+
+            img {
+                display: block;
+                border-radius: $border-radius-l;
+                width: 100%;
+            }
+        }
+
+        .information {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: $spacing-m;
+            width: 100%;
+
+            .uppercase {
+                margin-bottom: $spacing-xs;
+            }
+        }
+
+        .video {
+            width: 100%;
+
+            video {
+                display: block;
+                border-radius: $border-radius-l;
+                width: 100%;
+            }
+        }
+
+        .category:not(:last-of-type) {
+            margin-bottom: $spacing-l;
+        }
+    }
+
+    @media (max-width: $media-s) {
+        .wrapper{
+            width: 100%;
+            padding: $spacing-header $spacing-m $spacing-l $spacing-m;
+
+            .design {
+                .color>div:first-child,
+                .font {
+                    padding: 0 $spacing-m;
+                }
+
+                .color>div:first-child,
+                .color>div:last-child
+                .font {
+                    font-size: $font-size-xs;
+                }
+
+                .font>div{
+                    font-size: $font-size-xl;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        .wrapper {
+            .design {
+                .color>div:first-child>div:nth-child(1),
+                .color>div:first-child>div:nth-child(2) {
+                    display: none;
+                }
+            }
+
+            .information {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
